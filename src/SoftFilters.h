@@ -180,9 +180,12 @@ protected:
 	 * which overrides the BaseFilter::update member function.
 	 */
 	virtual bool refresh(IN_T const * const new_val, IN_T const * const old_val, OUT_T &output) = 0;
-	size_t capacity;  //< The cache capacity, i.e., maximum data it can hold.
-	size_t size;  //< The current cache size, i.e., valid data.
-	IN_T *buffer;  //< The internal buffer that holds the cached data.
+	size_t get_capacity() { return capacity; }
+	size_t get_size() { return size; }
+private:
+	size_t capacity;  ///< The cache capacity, i.e., maximum data it can hold.
+	size_t size;  ///< The current cache size, i.e., valid data.
+	IN_T *buffer;  ///< The internal buffer that holds the cached data.
 	/**
 	 * The position in the internal buffer that points to the end of the cache.
 	 * New data will be written at this position and this value will be
@@ -191,8 +194,7 @@ protected:
 	 * will be overwritten by the next incoming data.
 	 */
 	int end;
-private:
-	IN_T cached_val;  //< used to temporarily store the old data before overwritten by the new data
+	IN_T cached_val;  ///< used to temporarily store the old data before overwritten by the new data
 };
 
 /**
@@ -216,17 +218,17 @@ public:
 	 */
 	MovingAverageFilter(size_t w_sz) : CachedFilter<IN_T, OUT_T>(w_sz), sum(0) {  }
 protected:
-	/**
-	 * sum of the current cache content
-	 */
-	INTERNAL_T sum;
+	INTERNAL_T get_sum() { return sum; }
 	virtual bool refresh(IN_T const * const new_val, IN_T const * const old_val, OUT_T &output) override
 	{
 		// Udpate the sum.
 		sum += (INTERNAL_T) *new_val - (old_val == NULL ? 0 : (INTERNAL_T) *old_val);
-		output = sum / (INTERNAL_T) CachedFilter<IN_T, OUT_T>::size;
+		output = internal_result = sum / (INTERNAL_T) this->get_size();
 		return true;
 	}
+private:
+	INTERNAL_T sum;  ///< sum of the current cache content
+	INTERNAL_T internal_result;  ///< representing the result in internal type in case the output type does not have the required precision
 };
 
 /**
@@ -237,11 +239,8 @@ class MovingVarianceFilter : public MovingAverageFilter<IN_T, OUT_T, INTERNAL_T>
 {
 public:
 	MovingVarianceFilter(size_t w_sz) : MovingAverageFilter<IN_T, OUT_T, INTERNAL_T>(w_sz), squared_sum(0) { }
-private:
-	INTERNAL_T new_val_2;  //< square of the new data
-	INTERNAL_T old_val_2;  //< square of the old data
 protected:
-	INTERNAL_T squared_sum;  //< squared sum
+	INTERNAL_T get_squared_sum() { return squared_sum; }
 	virtual bool refresh(IN_T const * const new_val, IN_T const * const old_val, OUT_T &output) override
 	{
 		// now `output' holds the mean value
@@ -251,9 +250,13 @@ protected:
 		old_val_2 = old_val == NULL ? 0 : *old_val;
 		old_val_2 *= old_val_2;
 		squared_sum += new_val_2 - old_val_2;
-		output = squared_sum / (INTERNAL_T) CachedFilter<IN_T, OUT_T>::size - output * output;
+		output = squared_sum / (INTERNAL_T) this->get_size() - this->internal_result * this->internal_result;
 		return true;
 	}
+private:
+	INTERNAL_T new_val_2;  ///< square of the new data
+	INTERNAL_T old_val_2;  ///< square of the old data
+	INTERNAL_T squared_sum;  ///< squared sum
 };
 
 /**
@@ -276,15 +279,18 @@ public:
 	WeightedUpdateFilter(double w) : sensitivity(w), innertia(1 - w), seen_first(false) { }
 	virtual bool update(void const * const input) override
 	{
-		this->out_val = seen_first ?
-			innertia * this->out_val + sensitivity * (INTERNAL_T) *(IN_T const * const)input
-			:
-			*(IN_T const * const)input;
+		if (seen_first) {
+			this->out_val = internal_result = innertia * internal_result + sensitivity * (INTERNAL_T) *(IN_T const * const)input;
+		}
+		else {
+			this->out_val = internal_result = *(IN_T const * const)input;
+		}
 		return true;
 	}
 private:
 	INTERNAL_T sensitivity;  // sensitivity of the new observation, as a factor between 0 and 1
 	INTERNAL_T innertia;  // 1 - sensitivity
+	INTERNAL_T internal_result;  ///< representing the result in internal type in case the output type does not have the required precision
 	bool seen_first;
 };
 
