@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['end',['end',['../class_cached_filter.html#a2fcadcf4e29112efdcceb2ba8d7d0272',1,'CachedFilter']]]
+  ['buffer',['buffer',['../class_cached_filter.html#ac64749e117ffb29e1d5729b02cfb310f',1,'CachedFilter']]]
 ];

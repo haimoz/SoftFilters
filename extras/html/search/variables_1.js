@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['out_5fval',['out_val',['../class_base_filter.html#a7a305751ab9b7d627e0ff5972732f162',1,'BaseFilter']]]
+  ['cached_5fval',['cached_val',['../class_cached_filter.html#a71719664708bc0cbd0b7306077d36ec7',1,'CachedFilter']]],
+  ['capacity',['capacity',['../class_cached_filter.html#a4c5f5bcc239510937baa2f25cf9cbd16',1,'CachedFilter']]]
 ];

@@ -91,7 +91,6 @@ $(document).ready(function(){initNavTree('class_moving_variance_filter.html','')
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pro-methods">Protected Member Functions</a> &#124;
-<a href="#pro-attribs">Protected Attributes</a> &#124;
 <a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="class_moving_variance_filter-members.html">List of all members</a>  </div>
   <div class="headertitle">
@@ -150,13 +149,26 @@ Public Member Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
+<tr class="memitem:a12f19833ae78b418e6ed86df1e20ef7b"><td class="memItemLeft" align="right" valign="top"><a id="a12f19833ae78b418e6ed86df1e20ef7b"></a>
+INTERNAL_T&#160;</td><td class="memItemRight" valign="bottom"><b>get_squared_sum</b> ()</td></tr>
+<tr class="separator:a12f19833ae78b418e6ed86df1e20ef7b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af46acf304e1c7eba07bc747bf0c89992"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_moving_variance_filter.html#af46acf304e1c7eba07bc747bf0c89992">refresh</a> (IN_T const *const new_val, IN_T const *const old_val, OUT_T &amp;output) override</td></tr>
 <tr class="memdesc:af46acf304e1c7eba07bc747bf0c89992"><td class="mdescLeft">&#160;</td><td class="mdescRight">Refresh the output value given the new value added to the cache and the old value removed from the cache.  <a href="#af46acf304e1c7eba07bc747bf0c89992">More...</a><br /></td></tr>
 <tr class="separator:af46acf304e1c7eba07bc747bf0c89992"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pro_methods_class_moving_average_filter"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_class_moving_average_filter')"><img src="closed.png" alt="-"/>&#160;Protected Member Functions inherited from <a class="el" href="class_moving_average_filter.html">MovingAverageFilter&lt; IN_T, OUT_T, INTERNAL_T &gt;</a></td></tr>
+<tr class="memitem:a42a4bf3f4cdc1f8baa43c0de448284a6 inherit pro_methods_class_moving_average_filter"><td class="memItemLeft" align="right" valign="top"><a id="a42a4bf3f4cdc1f8baa43c0de448284a6"></a>
+INTERNAL_T&#160;</td><td class="memItemRight" valign="bottom"><b>get_sum</b> ()</td></tr>
+<tr class="separator:a42a4bf3f4cdc1f8baa43c0de448284a6 inherit pro_methods_class_moving_average_filter"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pro_methods_class_cached_filter"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_class_cached_filter')"><img src="closed.png" alt="-"/>&#160;Protected Member Functions inherited from <a class="el" href="class_cached_filter.html">CachedFilter&lt; IN_T, OUT_T &gt;</a></td></tr>
 <tr class="memitem:ada6270b4ddce28cf572c9be57aea8870 inherit pro_methods_class_cached_filter"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cached_filter.html#ada6270b4ddce28cf572c9be57aea8870">update</a> (void const *const input) override</td></tr>
 <tr class="memdesc:ada6270b4ddce28cf572c9be57aea8870 inherit pro_methods_class_cached_filter"><td class="mdescLeft">&#160;</td><td class="mdescRight">Internally update the filter output based on the given input.  <a href="class_cached_filter.html#ada6270b4ddce28cf572c9be57aea8870">More...</a><br /></td></tr>
 <tr class="separator:ada6270b4ddce28cf572c9be57aea8870 inherit pro_methods_class_cached_filter"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8ee7f67f2d91aece96c64cfb45f35d1a inherit pro_methods_class_cached_filter"><td class="memItemLeft" align="right" valign="top"><a id="a8ee7f67f2d91aece96c64cfb45f35d1a"></a>
+size_t&#160;</td><td class="memItemRight" valign="bottom"><b>get_capacity</b> ()</td></tr>
+<tr class="separator:a8ee7f67f2d91aece96c64cfb45f35d1a inherit pro_methods_class_cached_filter"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7d6653c0d4a2dd55db496288ed4cf226 inherit pro_methods_class_cached_filter"><td class="memItemLeft" align="right" valign="top"><a id="a7d6653c0d4a2dd55db496288ed4cf226"></a>
+size_t&#160;</td><td class="memItemRight" valign="bottom"><b>get_size</b> ()</td></tr>
+<tr class="separator:a7d6653c0d4a2dd55db496288ed4cf226 inherit pro_methods_class_cached_filter"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pro_methods_class_base_filter"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_class_base_filter')"><img src="closed.png" alt="-"/>&#160;Protected Member Functions inherited from <a class="el" href="class_base_filter.html">BaseFilter&lt; IN_T, OUT_T &gt;</a></td></tr>
 <tr class="memitem:a4850de72bd4d2d309bc1f0f0f213f7cc inherit pro_methods_class_base_filter"><td class="memItemLeft" align="right" valign="top">virtual void const  *const&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_base_filter.html#a4850de72bd4d2d309bc1f0f0f213f7cc">get_output_val_ptr</a> () final</td></tr>
 <tr class="memdesc:a4850de72bd4d2d309bc1f0f0f213f7cc inherit pro_methods_class_base_filter"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read-only access to the internal output memory.  <a href="class_base_filter.html#a4850de72bd4d2d309bc1f0f0f213f7cc">More...</a><br /></td></tr>
@@ -166,43 +178,28 @@ virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" hr
 <tr class="memdesc:ae26fe003083dca9719cef064c48b69a1 inherit pro_methods_class_base_filter"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copy the output to client memory. <br /></td></tr>
 <tr class="separator:ae26fe003083dca9719cef064c48b69a1 inherit pro_methods_class_base_filter"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
-Protected Attributes</h2></td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:af1b6ef6d61cff91db4604be866812525"><td class="memItemLeft" align="right" valign="top"><a id="af1b6ef6d61cff91db4604be866812525"></a>
+INTERNAL_T&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_moving_variance_filter.html#af1b6ef6d61cff91db4604be866812525">new_val_2</a></td></tr>
+<tr class="memdesc:af1b6ef6d61cff91db4604be866812525"><td class="mdescLeft">&#160;</td><td class="mdescRight">square of the new data <br /></td></tr>
+<tr class="separator:af1b6ef6d61cff91db4604be866812525"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1e74c9f124cc15bbb8cea2022cd272ff"><td class="memItemLeft" align="right" valign="top"><a id="a1e74c9f124cc15bbb8cea2022cd272ff"></a>
+INTERNAL_T&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_moving_variance_filter.html#a1e74c9f124cc15bbb8cea2022cd272ff">old_val_2</a></td></tr>
+<tr class="memdesc:a1e74c9f124cc15bbb8cea2022cd272ff"><td class="mdescLeft">&#160;</td><td class="mdescRight">square of the old data <br /></td></tr>
+<tr class="separator:a1e74c9f124cc15bbb8cea2022cd272ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:accb777a610e1015148b185e90dca82a4"><td class="memItemLeft" align="right" valign="top"><a id="accb777a610e1015148b185e90dca82a4"></a>
-INTERNAL_T&#160;</td><td class="memItemRight" valign="bottom"><b>squared_sum</b></td></tr>
+INTERNAL_T&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_moving_variance_filter.html#accb777a610e1015148b185e90dca82a4">squared_sum</a></td></tr>
+<tr class="memdesc:accb777a610e1015148b185e90dca82a4"><td class="mdescLeft">&#160;</td><td class="mdescRight">squared sum <br /></td></tr>
 <tr class="separator:accb777a610e1015148b185e90dca82a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="inherit_header pro_attribs_class_moving_average_filter"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_class_moving_average_filter')"><img src="closed.png" alt="-"/>&#160;Protected Attributes inherited from <a class="el" href="class_moving_average_filter.html">MovingAverageFilter&lt; IN_T, OUT_T, INTERNAL_T &gt;</a></td></tr>
-<tr class="memitem:a30e21244ca2529374722bea5c1195af6 inherit pro_attribs_class_moving_average_filter"><td class="memItemLeft" align="right" valign="top"><a id="a30e21244ca2529374722bea5c1195af6"></a>
-INTERNAL_T&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_moving_average_filter.html#a30e21244ca2529374722bea5c1195af6">sum</a></td></tr>
-<tr class="memdesc:a30e21244ca2529374722bea5c1195af6 inherit pro_attribs_class_moving_average_filter"><td class="mdescLeft">&#160;</td><td class="mdescRight">sum of the current cache content <br /></td></tr>
-<tr class="separator:a30e21244ca2529374722bea5c1195af6 inherit pro_attribs_class_moving_average_filter"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="inherit_header pro_attribs_class_cached_filter"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_class_cached_filter')"><img src="closed.png" alt="-"/>&#160;Protected Attributes inherited from <a class="el" href="class_cached_filter.html">CachedFilter&lt; IN_T, OUT_T &gt;</a></td></tr>
-<tr class="memitem:a4c5f5bcc239510937baa2f25cf9cbd16 inherit pro_attribs_class_cached_filter"><td class="memItemLeft" align="right" valign="top"><a id="a4c5f5bcc239510937baa2f25cf9cbd16"></a>
-size_t&#160;</td><td class="memItemRight" valign="bottom"><b>capacity</b></td></tr>
-<tr class="separator:a4c5f5bcc239510937baa2f25cf9cbd16 inherit pro_attribs_class_cached_filter"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a977751f42409c6ab29072201f6ef1fd3 inherit pro_attribs_class_cached_filter"><td class="memItemLeft" align="right" valign="top"><a id="a977751f42409c6ab29072201f6ef1fd3"></a>
-size_t&#160;</td><td class="memItemRight" valign="bottom"><b>size</b></td></tr>
-<tr class="separator:a977751f42409c6ab29072201f6ef1fd3 inherit pro_attribs_class_cached_filter"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac64749e117ffb29e1d5729b02cfb310f inherit pro_attribs_class_cached_filter"><td class="memItemLeft" align="right" valign="top"><a id="ac64749e117ffb29e1d5729b02cfb310f"></a>
-IN_T *&#160;</td><td class="memItemRight" valign="bottom"><b>buffer</b></td></tr>
-<tr class="separator:ac64749e117ffb29e1d5729b02cfb310f inherit pro_attribs_class_cached_filter"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2fcadcf4e29112efdcceb2ba8d7d0272 inherit pro_attribs_class_cached_filter"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cached_filter.html#a2fcadcf4e29112efdcceb2ba8d7d0272">end</a></td></tr>
-<tr class="memdesc:a2fcadcf4e29112efdcceb2ba8d7d0272 inherit pro_attribs_class_cached_filter"><td class="mdescLeft">&#160;</td><td class="mdescRight">The position in the internal buffer that points to the end of the cache.  <a href="class_cached_filter.html#a2fcadcf4e29112efdcceb2ba8d7d0272">More...</a><br /></td></tr>
-<tr class="separator:a2fcadcf4e29112efdcceb2ba8d7d0272 inherit pro_attribs_class_cached_filter"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
+Additional Inherited Members</h2></td></tr>
 <tr class="inherit_header pro_attribs_class_base_filter"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_class_base_filter')"><img src="closed.png" alt="-"/>&#160;Protected Attributes inherited from <a class="el" href="class_base_filter.html">BaseFilter&lt; IN_T, OUT_T &gt;</a></td></tr>
 <tr class="memitem:a7a305751ab9b7d627e0ff5972732f162 inherit pro_attribs_class_base_filter"><td class="memItemLeft" align="right" valign="top"><a id="a7a305751ab9b7d627e0ff5972732f162"></a>
 OUT_T&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_base_filter.html#a7a305751ab9b7d627e0ff5972732f162">out_val</a></td></tr>
 <tr class="memdesc:a7a305751ab9b7d627e0ff5972732f162 inherit pro_attribs_class_base_filter"><td class="mdescLeft">&#160;</td><td class="mdescRight">Internally managed storage of the output value. <br /></td></tr>
 <tr class="separator:a7a305751ab9b7d627e0ff5972732f162 inherit pro_attribs_class_base_filter"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
-Private Attributes</h2></td></tr>
-<tr class="memitem:af1b6ef6d61cff91db4604be866812525"><td class="memItemLeft" align="right" valign="top"><a id="af1b6ef6d61cff91db4604be866812525"></a>
-INTERNAL_T&#160;</td><td class="memItemRight" valign="bottom"><b>new_val_2</b></td></tr>
-<tr class="separator:af1b6ef6d61cff91db4604be866812525"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1e74c9f124cc15bbb8cea2022cd272ff"><td class="memItemLeft" align="right" valign="top"><a id="a1e74c9f124cc15bbb8cea2022cd272ff"></a>
-INTERNAL_T&#160;</td><td class="memItemRight" valign="bottom"><b>old_val_2</b></td></tr>
-<tr class="separator:a1e74c9f124cc15bbb8cea2022cd272ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><h3>template&lt;typename IN_T, typename OUT_T, typename INTERNAL_T = double&gt;<br />

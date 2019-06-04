@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['sum',['sum',['../class_moving_average_filter.html#a30e21244ca2529374722bea5c1195af6',1,'MovingAverageFilter']]]
+  ['end',['end',['../class_cached_filter.html#a2fcadcf4e29112efdcceb2ba8d7d0272',1,'CachedFilter']]]
 ];

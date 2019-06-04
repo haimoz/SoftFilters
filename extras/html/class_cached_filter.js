@@ -2,6 +2,8 @@ var class_cached_filter =
 [
     [ "CachedFilter", "class_cached_filter.html#a8ab90626a25058b902739ba4a50a0c65", null ],
     [ "~CachedFilter", "class_cached_filter.html#a274f0098f005e13edbf791d16602aeee", null ],
+    [ "get_capacity", "class_cached_filter.html#a8ee7f67f2d91aece96c64cfb45f35d1a", null ],
+    [ "get_size", "class_cached_filter.html#a7d6653c0d4a2dd55db496288ed4cf226", null ],
     [ "refresh", "class_cached_filter.html#aea1334294830c862800ab70b03877e03", null ],
     [ "update", "class_cached_filter.html#ada6270b4ddce28cf572c9be57aea8870", null ],
     [ "buffer", "class_cached_filter.html#ac64749e117ffb29e1d5729b02cfb310f", null ],

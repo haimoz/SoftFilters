@@ -91,7 +91,6 @@ $(document).ready(function(){initNavTree('class_cached_filter.html','');});
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pro-methods">Protected Member Functions</a> &#124;
-<a href="#pro-attribs">Protected Attributes</a> &#124;
 <a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="class_cached_filter-members.html">List of all members</a>  </div>
   <div class="headertitle">
@@ -146,6 +145,12 @@ Protected Member Functions</h2></td></tr>
 <tr class="memitem:aea1334294830c862800ab70b03877e03"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cached_filter.html#aea1334294830c862800ab70b03877e03">refresh</a> (IN_T const *const new_val, IN_T const *const old_val, OUT_T &amp;output)=0</td></tr>
 <tr class="memdesc:aea1334294830c862800ab70b03877e03"><td class="mdescLeft">&#160;</td><td class="mdescRight">Refresh the output value given the new value added to the cache and the old value removed from the cache.  <a href="#aea1334294830c862800ab70b03877e03">More...</a><br /></td></tr>
 <tr class="separator:aea1334294830c862800ab70b03877e03"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8ee7f67f2d91aece96c64cfb45f35d1a"><td class="memItemLeft" align="right" valign="top"><a id="a8ee7f67f2d91aece96c64cfb45f35d1a"></a>
+size_t&#160;</td><td class="memItemRight" valign="bottom"><b>get_capacity</b> ()</td></tr>
+<tr class="separator:a8ee7f67f2d91aece96c64cfb45f35d1a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7d6653c0d4a2dd55db496288ed4cf226"><td class="memItemLeft" align="right" valign="top"><a id="a7d6653c0d4a2dd55db496288ed4cf226"></a>
+size_t&#160;</td><td class="memItemRight" valign="bottom"><b>get_size</b> ()</td></tr>
+<tr class="separator:a7d6653c0d4a2dd55db496288ed4cf226"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pro_methods_class_base_filter"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_class_base_filter')"><img src="closed.png" alt="-"/>&#160;Protected Member Functions inherited from <a class="el" href="class_base_filter.html">BaseFilter&lt; IN_T, OUT_T &gt;</a></td></tr>
 <tr class="memitem:a4850de72bd4d2d309bc1f0f0f213f7cc inherit pro_methods_class_base_filter"><td class="memItemLeft" align="right" valign="top">virtual void const  *const&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_base_filter.html#a4850de72bd4d2d309bc1f0f0f213f7cc">get_output_val_ptr</a> () final</td></tr>
 <tr class="memdesc:a4850de72bd4d2d309bc1f0f0f213f7cc inherit pro_methods_class_base_filter"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read-only access to the internal output memory.  <a href="class_base_filter.html#a4850de72bd4d2d309bc1f0f0f213f7cc">More...</a><br /></td></tr>
@@ -155,31 +160,35 @@ virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" hr
 <tr class="memdesc:ae26fe003083dca9719cef064c48b69a1 inherit pro_methods_class_base_filter"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copy the output to client memory. <br /></td></tr>
 <tr class="separator:ae26fe003083dca9719cef064c48b69a1 inherit pro_methods_class_base_filter"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
-Protected Attributes</h2></td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
 <tr class="memitem:a4c5f5bcc239510937baa2f25cf9cbd16"><td class="memItemLeft" align="right" valign="top"><a id="a4c5f5bcc239510937baa2f25cf9cbd16"></a>
-size_t&#160;</td><td class="memItemRight" valign="bottom"><b>capacity</b></td></tr>
+size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cached_filter.html#a4c5f5bcc239510937baa2f25cf9cbd16">capacity</a></td></tr>
+<tr class="memdesc:a4c5f5bcc239510937baa2f25cf9cbd16"><td class="mdescLeft">&#160;</td><td class="mdescRight">The cache capacity, i.e., maximum data it can hold. <br /></td></tr>
 <tr class="separator:a4c5f5bcc239510937baa2f25cf9cbd16"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a977751f42409c6ab29072201f6ef1fd3"><td class="memItemLeft" align="right" valign="top"><a id="a977751f42409c6ab29072201f6ef1fd3"></a>
-size_t&#160;</td><td class="memItemRight" valign="bottom"><b>size</b></td></tr>
+size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cached_filter.html#a977751f42409c6ab29072201f6ef1fd3">size</a></td></tr>
+<tr class="memdesc:a977751f42409c6ab29072201f6ef1fd3"><td class="mdescLeft">&#160;</td><td class="mdescRight">The current cache size, i.e., valid data. <br /></td></tr>
 <tr class="separator:a977751f42409c6ab29072201f6ef1fd3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac64749e117ffb29e1d5729b02cfb310f"><td class="memItemLeft" align="right" valign="top"><a id="ac64749e117ffb29e1d5729b02cfb310f"></a>
-IN_T *&#160;</td><td class="memItemRight" valign="bottom"><b>buffer</b></td></tr>
+IN_T *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cached_filter.html#ac64749e117ffb29e1d5729b02cfb310f">buffer</a></td></tr>
+<tr class="memdesc:ac64749e117ffb29e1d5729b02cfb310f"><td class="mdescLeft">&#160;</td><td class="mdescRight">The internal buffer that holds the cached data. <br /></td></tr>
 <tr class="separator:ac64749e117ffb29e1d5729b02cfb310f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2fcadcf4e29112efdcceb2ba8d7d0272"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cached_filter.html#a2fcadcf4e29112efdcceb2ba8d7d0272">end</a></td></tr>
 <tr class="memdesc:a2fcadcf4e29112efdcceb2ba8d7d0272"><td class="mdescLeft">&#160;</td><td class="mdescRight">The position in the internal buffer that points to the end of the cache.  <a href="#a2fcadcf4e29112efdcceb2ba8d7d0272">More...</a><br /></td></tr>
 <tr class="separator:a2fcadcf4e29112efdcceb2ba8d7d0272"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a71719664708bc0cbd0b7306077d36ec7"><td class="memItemLeft" align="right" valign="top"><a id="a71719664708bc0cbd0b7306077d36ec7"></a>
+IN_T&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cached_filter.html#a71719664708bc0cbd0b7306077d36ec7">cached_val</a></td></tr>
+<tr class="memdesc:a71719664708bc0cbd0b7306077d36ec7"><td class="mdescLeft">&#160;</td><td class="mdescRight">used to temporarily store the old data before overwritten by the new data <br /></td></tr>
+<tr class="separator:a71719664708bc0cbd0b7306077d36ec7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
+Additional Inherited Members</h2></td></tr>
 <tr class="inherit_header pro_attribs_class_base_filter"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_class_base_filter')"><img src="closed.png" alt="-"/>&#160;Protected Attributes inherited from <a class="el" href="class_base_filter.html">BaseFilter&lt; IN_T, OUT_T &gt;</a></td></tr>
 <tr class="memitem:a7a305751ab9b7d627e0ff5972732f162 inherit pro_attribs_class_base_filter"><td class="memItemLeft" align="right" valign="top"><a id="a7a305751ab9b7d627e0ff5972732f162"></a>
 OUT_T&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_base_filter.html#a7a305751ab9b7d627e0ff5972732f162">out_val</a></td></tr>
 <tr class="memdesc:a7a305751ab9b7d627e0ff5972732f162 inherit pro_attribs_class_base_filter"><td class="mdescLeft">&#160;</td><td class="mdescRight">Internally managed storage of the output value. <br /></td></tr>
 <tr class="separator:a7a305751ab9b7d627e0ff5972732f162 inherit pro_attribs_class_base_filter"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
-Private Attributes</h2></td></tr>
-<tr class="memitem:a71719664708bc0cbd0b7306077d36ec7"><td class="memItemLeft" align="right" valign="top"><a id="a71719664708bc0cbd0b7306077d36ec7"></a>
-IN_T&#160;</td><td class="memItemRight" valign="bottom"><b>cached_val</b></td></tr>
-<tr class="separator:a71719664708bc0cbd0b7306077d36ec7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><h3>template&lt;typename IN_T, typename OUT_T&gt;<br />
@@ -295,7 +304,7 @@ template&lt;typename IN_T , typename OUT_T &gt; </div>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
