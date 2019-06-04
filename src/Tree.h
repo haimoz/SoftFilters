@@ -1,4 +1,9 @@
 /**
+ * @todo
+ * Implement and document the Tree class.
+ */
+
+/**
  * @file Tree.h
  * The tree class to support the filter framework.
  * @note

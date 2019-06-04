@@ -1,0 +1,6 @@
+<map id="MovingVarianceFilter&lt; IN_T, OUT_T, INTERNAL_T &gt;" name="MovingVarianceFilter&lt; IN_T, OUT_T, INTERNAL_T &gt;">
+<area shape="rect" id="node2" href="$class_moving_average_filter.html" title="A filter that outputs the average of a moving window. " alt="" coords="5,261,229,303"/>
+<area shape="rect" id="node3" href="$class_cached_filter.html" title="A filter with a data cache, which is suitable for output that depends on several previous input data..." alt="" coords="43,171,191,212"/>
+<area shape="rect" id="node4" href="$class_base_filter.html" title="The typed filter base class. " alt="" coords="20,95,215,121"/>
+<area shape="rect" id="node5" href="$class_filter.html" title="The Filter interface without type checking at compile time. " alt="" coords="48,5,101,32"/>
+</map>

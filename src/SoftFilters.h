@@ -41,12 +41,10 @@ public:
 protected:
 
 /**
- * @def ITN(x)
  * Cast x to the internal processing data type.
  */
 #define ITN(x) ((INTERNAL_T)(x))
 /**
- * @def INTERPOLATE(p0, v0, p1, p2, v2)
  * Interpolates the value of p1
  * given positions and values of two other points p0 and p2.
  *
@@ -119,6 +117,14 @@ private:
 	IN_T const * in_ptr;
 };
 
+/**
+ * A filter that adds timestamps to the input values.
+ *
+ * @tparam VAL_T type of the input values
+ * @tparam TS_T type of the timestamp, defaults to `unsigned long`
+ * as per Arduino documentation of `millis` and `micros`
+ * @tparam time_fn a function taking no parameter and returns a timestamp
+ */
 template <typename VAL_T, typename TS_T=unsigned long, TS_T (*time_fn)()=micros>
 class TimestampFilter : public BaseFilter<VAL_T, Reading<VAL_T, TS_T> >
 {
@@ -131,11 +137,20 @@ public:
 	}
 };
 
+/**
+ * A filter with a data cache, which is suitable for output that depends on
+ * several previous input data.
+ *
+ * This class is internally implemented as a circular buffer.
+ *
+ * @tparam IN_T input data type
+ * @tparam OUT_T output data type
+ */
 template <typename IN_T, typename OUT_T>
 class CachedFilter : public BaseFilter<IN_T, OUT_T>
 {
 public:
-	CachedFilter(size_t cap) : capacity(cap), size(0), pos(0)
+	CachedFilter(size_t cap) : capacity(cap), size(0), end(0)
 	{
 		this->buffer = new IN_T[this->capacity];
 	}
@@ -145,38 +160,65 @@ protected:
 	{
 		if (this->size < this->capacity) {
 			++size;
-			this->buffer[pos++] = *(IN_T const * const) input;
-			pos %= capacity;
+			this->buffer[end++] = *(IN_T const * const) input;
+			end %= capacity;
 			return refresh((IN_T const * const) input, NULL, this->out_val);
 		}
 		else {
-			cached_val = this->buffer[pos];
-			this->buffer[pos++] = *(IN_T const * const) input;
-			pos %= capacity;
+			cached_val = this->buffer[end];
+			this->buffer[end++] = *(IN_T const * const) input;
+			end %= capacity;
 			return refresh((IN_T const * const) input, &cached_val, this->out_val);
 		}
 	}
+	/**
+	 * Refresh the output value given the new value added to the cache
+	 * and the old value removed from the cache.
+	 *
+	 * @note
+	 * To be differentiated from the CachedFilter::update member function
+	 * which overrides the BaseFilter::update member function.
+	 */
 	virtual bool refresh(IN_T const * const new_val, IN_T const * const old_val, OUT_T &output) = 0;
-	size_t capacity;
-	size_t size;
-	int pos;
-	IN_T *buffer;
+	size_t capacity;  //< The cache capacity, i.e., maximum data it can hold.
+	size_t size;  //< The current cache size, i.e., valid data.
+	IN_T *buffer;  //< The internal buffer that holds the cached data.
+	/**
+	 * The position in the internal buffer that points to the end of the cache.
+	 * New data will be written at this position and this value will be
+	 * incremented, wrapping around at the boundary of the internal buffer.
+	 * When the cache is full, this position points at the oldest data which
+	 * will be overwritten by the next incoming data.
+	 */
+	int end;
 private:
-	IN_T cached_val;
+	IN_T cached_val;  //< used to temporarily store the old data before overwritten by the new data
 };
 
 /**
- * INTERNAL_T is the type used for internal processing, which defaults to using
- * `double' to prevent any loss of precision between `float' input and `double'
- * output.  Any input if first casted to the internal type for processing,
- * whose result is cast to the output type.
+ * A filter that outputs the average of a moving window.
+ *
+ * @tparam IN_T Input data type.
+ * @tparam OUT_T Output data type.
+ * @tparam INTERNAL_T The type used for internal processing.
+ * Defaults to `double`.
+ * Any input is first cast to the internal type for processing,
+ * whose result is then cast to the output type.
  */
 template <typename IN_T, typename OUT_T, typename INTERNAL_T=double>
 class MovingAverageFilter : public CachedFilter<IN_T, OUT_T>
 {
 public:
+	/**
+	 * Create a moving average filter with the specified window size.
+	 *
+	 * @param [in] w_sz The window size.
+	 */
 	MovingAverageFilter(size_t w_sz) : CachedFilter<IN_T, OUT_T>(w_sz), sum(0) {  }
 protected:
+	/**
+	 * sum of the current cache content
+	 */
 	INTERNAL_T sum;
 	virtual bool refresh(IN_T const * const new_val, IN_T const * const old_val, OUT_T &output) override
 	{
@@ -187,16 +229,19 @@ protected:
 	}
 };
 
+/**
+ * A moving variance filter.
+ */
 template <typename IN_T, typename OUT_T, typename INTERNAL_T=double>
 class MovingVarianceFilter : public MovingAverageFilter<IN_T, OUT_T, INTERNAL_T>
 {
 public:
 	MovingVarianceFilter(size_t w_sz) : MovingAverageFilter<IN_T, OUT_T, INTERNAL_T>(w_sz), squared_sum(0) { }
 private:
-	INTERNAL_T new_val_2;
-	INTERNAL_T old_val_2;
+	INTERNAL_T new_val_2;  //< square of the new data
+	INTERNAL_T old_val_2;  //< square of the old data
 protected:
-	INTERNAL_T squared_sum;
+	INTERNAL_T squared_sum;  //< squared sum
 	virtual bool refresh(IN_T const * const new_val, IN_T const * const old_val, OUT_T &output) override
 	{
 		// now `output' holds the mean value
@@ -211,19 +256,36 @@ protected:
 	}
 };
 
+/**
+ * A filter that updates the output based on a weighted average between its
+ * previous output and the current input.
+ *
+ * Mathematically, let \f$w\f$ be the sensitivity (weight of the input),
+ * \f$1-w\f$ be the innertia (weight of the previous output),
+ * \f$u_i\f$ be the \f$i\f$-th input, and \f$v_i\f$ be the \f$i\f$-th output.
+ * Then
+ * \f{aligned}{
+ * v_0 &= u_0 \\
+ * v_i &= w \, u_i + (1 - w) \, v_{i-1} \;\;\;\;\text{for}\; i>0, w\in[0,1]
+ * \f}
+ */
 template <typename IN_T, typename OUT_T, typename INTERNAL_T=double>
 class WeightedUpdateFilter : public BaseFilter<IN_T, OUT_T>
 {
 public:
-	WeightedUpdateFilter(double w) : sensitivity(w), innertia(1 - w) { }
+	WeightedUpdateFilter(double w) : sensitivity(w), innertia(1 - w), seen_first(false) { }
 	virtual bool update(void const * const input) override
 	{
-		this->out_val = innertia * this->out_val + sensitivity * (INTERNAL_T) *(IN_T const * const)input;
+		this->out_val = seen_first ?
+			innertia * this->out_val + sensitivity * (INTERNAL_T) *(IN_T const * const)input
+			:
+			*(IN_T const * const)input;
 		return true;
 	}
 private:
 	INTERNAL_T sensitivity;  // sensitivity of the new observation, as a factor between 0 and 1
 	INTERNAL_T innertia;  // 1 - sensitivity
+	bool seen_first;
 };
 
 /**

@@ -1,0 +1,7 @@
+<map id="BaseFilter&lt; IN_T, OUT_T &gt;" name="BaseFilter&lt; IN_T, OUT_T &gt;">
+<area shape="rect" id="node3" href="$class_cached_filter.html" title="A filter with a data cache, which is suitable for output that depends on several previous input data..." alt="" coords="43,155,191,196"/>
+<area shape="rect" id="node6" href="$class_weighted_update_filter.html" title="A filter that updates the output based on a weighted average between its previous output and the curr..." alt="" coords="215,155,374,196"/>
+<area shape="rect" id="node2" href="$class_filter.html" title="The Filter interface without type checking at compile time. " alt="" coords="179,5,232,32"/>
+<area shape="rect" id="node4" href="$class_moving_average_filter.html" title="A filter that outputs the average of a moving window. " alt="" coords="41,244,193,285"/>
+<area shape="rect" id="node5" href="$class_moving_variance_filter.html" title="A moving variance filter. " alt="" coords="5,333,229,375"/>
+</map>

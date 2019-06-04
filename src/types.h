@@ -1,6 +1,13 @@
 #ifndef TYPES_H
 #define TYPES_H
 
+/**
+ * A class that contains a <value, timestamp> tuple.
+ *
+ * @tparam VAL_T the value type
+ * @tparam TS_T the timestamp type, defaults to `unsigned long`
+ * as per Arduino references for `millis` and `micros`.
+ */
 template <typename VAL_T, typename TS_T=unsigned long>
 class Reading
 {
@@ -11,6 +18,12 @@ public:
 	Reading(VAL_T v, TS_T ts) : value(v), timestamp(ts) { }
 };
 
+/**
+ * A class to represent the speed and acceleration of a value
+ * in addition to itself.
+ *
+ * @tparam T the type of the position, speed, and acceleration values
+ */
 template <typename T>
 class Differential
 {

@@ -8,8 +8,10 @@ Jonathan Aceituno <join@oin.name>
 
 For details, see http://www.lifl.fr/~casiez/1euro
 
-Updated: 23 May 2019 by Haimo Zhang <zh.hammer.dev@gmail.com>
-Included Arduino header instead of cmath.
+Updates:
+
+- 23 May 2019 by Haimo Zhang <zh.hammer.dev@gmail.com>
+  - Included Arduino header
 
 */
 

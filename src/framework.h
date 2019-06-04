@@ -11,27 +11,37 @@
 #include "Tree.h"
 
 /**
- * %Filter interface without type checking at compile time.
- * @note It is the client code's responsibility to ensure type compatibility
- * between filters.
+ * The %Filter interface without type checking at compile time.
+ *
+ * @note
+ * It is the client code's responsibility to ensure
+ * that the correct pointers are passed to the filter.
  */
 class Filter
 {
+	// Composite filter classes need to access protected and private members
+	// of Filter instances, and are thus marked as friends.
 	friend class FilterChain;
 	friend class FilterTree;
 public:
 	/**
 	 * Push a new data through the filter.
 	 *
-	 * @note
 	 * A filter is not required to always output a data in response
 	 * to a new input data.
 	 * For example, a delay filter might wait for several input data
 	 * before outputing.
 	 * This behavior is supported through the boolean return value.
 	 *
+	 * @note
+	 * The input and output memory is managed by the client code,
+	 * i.e., the client code is responsible for
+	 * the lifetime of the input and output memory
+	 * and the validity of the two pointers.
+	 *
 	 * @param[in] input
 	 * A read-only pointer to the input data.
+	 * When the input pointer is NULL, this function returns false.
 	 *
 	 * @param[out] output
 	 * A pointer to the memory (managed by the client code)
@@ -42,6 +52,18 @@ public:
 	 * @note
 	 * The output memory is not guaranteed to remain the same even if
 	 * the return value is false.
+	 *
+	 * @note
+	 * Derived classes should not overload this member function.
+	 * For composite filters that combine several filters
+	 * (e.g., FilterChain and FilterTree),
+	 * it is recommended to derive from this class
+	 * and override its protected member functions.
+	 * For filters that perform actual computation,
+	 * it is recommended to derive from the BaseFilter class
+	 * and only override its BaseFilter::update member function,
+	 * since the BaseFilter class already takes care of
+	 * the other protected member functions for the internal workings.
 	 */
 	bool push(void const * const input, void * const output)
 	{
@@ -53,7 +75,12 @@ public:
 	}
 protected:
 	/**
-	 * Access the read-only internal output memory.
+	 * Read-only access to the internal output memory.
+	 *
+	 * This member function is mainly used by derived composite filters,
+	 * which needs to point the output of the previous filter stage
+	 * to the input of the next fitler stage.
+	 * See for example the implementation of FilterChain.
 	 *
 	 * @returns
 	 * A read-only pointer to the memory where the output value is stored internally
@@ -62,7 +89,7 @@ protected:
 	virtual void const * const get_output_val_ptr() = 0;
 	/**
 	 * Internally update the filter output based on the given input.
-	 * This method behaves similarly to the public push method,
+	 * This method behaves similarly to the public Filter::push method,
 	 * but without copying the output to the client memory.
 	 * This method is for internal workings of the filter framework.
 	 */
@@ -87,6 +114,9 @@ class BaseFilter : public Filter
 public:
 	/**
 	 * Push a new data through the filter.
+	 * This function is essentially a proxy call to the Filter::push function
+	 * that does away the pointer parameter, which is supposed to be
+	 * beginner-friendly.
 	 *
 	 * @param[in] input A read-only reference to the input data.
 	 * @param[out] output The reference to the output data to be written to.

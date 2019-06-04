@@ -1,0 +1,7 @@
+<map id="DifferentialFilter&lt; VAL_T, TS_T, INTERNAL_T &gt;" name="DifferentialFilter&lt; VAL_T, TS_T, INTERNAL_T &gt;">
+<area shape="rect" id="node2" href="$class_base_filter.html" title="BaseFilter\&lt; Reading\l\&lt; VAL_T, TS_T \&gt;, Reading\l\&lt; Differential\&lt; VAL_T \&gt;\l, TS_T \&gt; \&gt;" alt="" coords="563,34,753,105"/>
+<area shape="rect" id="node3" href="$class_filter.html" title="The Filter interface without type checking at compile time. " alt="" coords="345,5,399,32"/>
+<area shape="rect" id="node4" href="$class_reading.html" title="Reading\&lt; Differential\l\&lt; VAL_T \&gt;, TS_T \&gt;" alt="" coords="295,57,449,98"/>
+<area shape="rect" id="node5" href="$class_differential.html" title="Differential\&lt; VAL_T \&gt;" alt="" coords="5,40,163,67"/>
+<area shape="rect" id="node7" href="$class_reading.html" title="A class that contains a &lt;value, timestamp&gt; tuple. " alt="" coords="280,181,464,208"/>
+</map>
