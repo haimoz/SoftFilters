@@ -226,9 +226,9 @@ protected:
 		output = internal_result = sum / (INTERNAL_T) this->get_size();
 		return true;
 	}
+	INTERNAL_T internal_result;  ///< representing the result in internal type in case the output type does not have the required precision
 private:
 	INTERNAL_T sum;  ///< sum of the current cache content
-	INTERNAL_T internal_result;  ///< representing the result in internal type in case the output type does not have the required precision
 };
 
 /**
@@ -243,14 +243,14 @@ protected:
 	INTERNAL_T get_squared_sum() { return squared_sum; }
 	virtual bool refresh(IN_T const * const new_val, IN_T const * const old_val, OUT_T &output) override
 	{
-		// now `output' holds the mean value
+		// now the `internal_result` holds the mean value
 		MovingAverageFilter<IN_T, OUT_T>::refresh(new_val, old_val, output);
 		new_val_2 = *new_val;
 		new_val_2 *= new_val_2;
 		old_val_2 = old_val == NULL ? 0 : *old_val;
 		old_val_2 *= old_val_2;
 		squared_sum += new_val_2 - old_val_2;
-		output = squared_sum / (INTERNAL_T) this->get_size() - this->internal_result * this->internal_result;
+		output = this->internal_result = squared_sum / (INTERNAL_T) this->get_size() - this->internal_result * this->internal_result;
 		return true;
 	}
 private:
@@ -287,10 +287,52 @@ public:
 		}
 		return true;
 	}
+protected:
+	INTERNAL_T internal_result;  ///< representing the result in internal type in case the output type does not have the required precision
 private:
 	INTERNAL_T sensitivity;  // sensitivity of the new observation, as a factor between 0 and 1
 	INTERNAL_T innertia;  // 1 - sensitivity
-	INTERNAL_T internal_result;  ///< representing the result in internal type in case the output type does not have the required precision
+	bool seen_first;
+};
+
+/**
+ * An adaptive normalization filter.
+ * It outputs a double-precision floating point number
+ * with value between 0 to 1,
+ * normalized against the range of all previous input to this filter.
+ */
+template <typename VAL_T>
+class AdaptiveNormalizationFilter: public BaseFilter<VAL_T, double>
+{
+public:
+	AdaptiveNormalizationFilter() : seen_first(false) { }
+	virtual bool update(void const * const input) override
+	{
+		in_val = *(VAL_T const * const) input;
+		if (!seen_first) {
+			maximum = minimum = in_val;
+			this->out_val = 0;
+			seen_first = true;
+		}
+		else {
+			if (in_val >= maximum) {
+				maximum = in_val;
+				this->out_val = 1;
+			}
+			else if (in_val <= minimum) {
+				minimum = in_val;
+				this->out_val = 0;
+			}
+			else {
+				this->out_val = (in_val - minimum) / (double) (maximum - minimum);
+			}
+		}
+		return true;
+	}
+private:
+	VAL_T maximum;
+	VAL_T minimum;
+	VAL_T in_val;
 	bool seen_first;
 };
 
