@@ -120,12 +120,19 @@ private:
 /**
  * A filter that adds timestamps to the input values.
  *
- * @tparam VAL_T type of the input values
+ * @tparam VAL_T type of the input values.
  * @tparam TS_T type of the timestamp, defaults to `unsigned long`
- * as per Arduino documentation of `millis` and `micros`
- * @tparam time_fn a function taking no parameter and returns a timestamp
+ * as per Arduino documentation of `millis` and `micros`.
+ * @tparam time_fn
+ * A function taking no parameter and returns a timestamp.
+ * On Arduino platforms, this defaults to the `micros` function.
+ * Otherwise (e.g., when used in other C++ environments), there is no default.
  */
+#ifdef ARDUINO
 template <typename VAL_T, typename TS_T=unsigned long, TS_T (*time_fn)()=micros>
+#else
+template <typename VAL_T, typename TS_T=unsigned long, TS_T (*time_fn)()>
+#endif
 class TimestampFilter : public BaseFilter<VAL_T, Reading<VAL_T, TS_T> >
 {
 public:
