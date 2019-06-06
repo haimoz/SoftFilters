@@ -161,7 +161,11 @@ public:
 	 */
 	LambdaFilter(bool (*f)(IN_T const &, OUT_T &)): lambda(f) { }
 protected:
-	virtual bool update(void const * const input)
+	/**
+	 * In a lambda filter,
+	 * the update function simply calls the client-supplied filter function.
+	 */
+	virtual bool update(void const * const input) override
 	{
 		return lambda(*(IN_T const * const) input, this->out_val);
 	}
