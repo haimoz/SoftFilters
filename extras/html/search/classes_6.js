@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['nodeiterator',['NodeIterator',['../class_node_iterator.html',1,'']]]
+  ['movingaveragefilter',['MovingAverageFilter',['../class_moving_average_filter.html',1,'']]],
+  ['movingvariancefilter',['MovingVarianceFilter',['../class_moving_variance_filter.html',1,'']]]
 ];

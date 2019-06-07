@@ -9,6 +9,7 @@ var hierarchy =
             [ "MovingVarianceFilter< IN_T, OUT_T, INTERNAL_T >", "class_moving_variance_filter.html", null ]
           ] ]
         ] ],
+        [ "LambdaFilter< IN_T, OUT_T >", "class_lambda_filter.html", null ],
         [ "WeightedUpdateFilter< IN_T, OUT_T, INTERNAL_T >", "class_weighted_update_filter.html", null ]
       ] ],
       [ "BaseFilter< Reading< VAL_T, TS_T >, Reading< Differential< VAL_T >, TS_T > >", "class_base_filter.html", [
@@ -16,6 +17,9 @@ var hierarchy =
       ] ],
       [ "BaseFilter< Reading< VAL_T, TS_T >, Reading< VAL_T, TS_T > >", "class_base_filter.html", [
         [ "OneEuroFilter< VAL_T, TS_T >", "class_one_euro_filter.html", null ]
+      ] ],
+      [ "BaseFilter< VAL_T, double >", "class_base_filter.html", [
+        [ "AdaptiveNormalizationFilter< VAL_T >", "class_adaptive_normalization_filter.html", null ]
       ] ],
       [ "BaseFilter< VAL_T, Reading< VAL_T, TS_T > >", "class_base_filter.html", [
         [ "TimestampFilter< VAL_T, TS_T, time_fn >", "class_timestamp_filter.html", null ]

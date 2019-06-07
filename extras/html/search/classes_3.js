@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['filter',['Filter',['../class_filter.html',1,'']]],
-  ['filterchain',['FilterChain',['../class_filter_chain.html',1,'']]],
-  ['filtertree',['FilterTree',['../class_filter_tree.html',1,'']]]
+  ['differential',['Differential',['../class_differential.html',1,'']]],
+  ['differential_3c_20val_5ft_20_3e',['Differential&lt; VAL_T &gt;',['../class_differential.html',1,'']]],
+  ['differentialfilter',['DifferentialFilter',['../class_differential_filter.html',1,'']]]
 ];

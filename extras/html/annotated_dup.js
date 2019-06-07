@@ -1,5 +1,6 @@
 var annotated_dup =
 [
+    [ "AdaptiveNormalizationFilter", "class_adaptive_normalization_filter.html", "class_adaptive_normalization_filter" ],
     [ "BaseFilter", "class_base_filter.html", "class_base_filter" ],
     [ "CachedFilter", "class_cached_filter.html", "class_cached_filter" ],
     [ "Differential", "class_differential.html", "class_differential" ],
@@ -7,6 +8,7 @@ var annotated_dup =
     [ "Filter", "class_filter.html", "class_filter" ],
     [ "FilterChain", "class_filter_chain.html", "class_filter_chain" ],
     [ "FilterTree", "class_filter_tree.html", null ],
+    [ "LambdaFilter", "class_lambda_filter.html", "class_lambda_filter" ],
     [ "LinkedList", "class_linked_list.html", "class_linked_list" ],
     [ "LinkedListNode", "class_linked_list_node.html", "class_linked_list_node" ],
     [ "low_pass_filter", "structlow__pass__filter.html", "structlow__pass__filter" ],

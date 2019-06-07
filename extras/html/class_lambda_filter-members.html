@@ -70,7 +70,7 @@ $(function() {
   </div>
 </div>
 <script type="text/javascript">
-$(document).ready(function(){initNavTree('class_weighted_update_filter.html','');});
+$(document).ready(function(){initNavTree('class_lambda_filter.html','');});
 </script>
 <div id="doc-content">
 <!-- window showing the filter options -->
@@ -89,23 +89,20 @@ $(document).ready(function(){initNavTree('class_weighted_update_filter.html','')
 
 <div class="header">
   <div class="headertitle">
-<div class="title">WeightedUpdateFilter&lt; IN_T, OUT_T, INTERNAL_T &gt; Member List</div>  </div>
+<div class="title">LambdaFilter&lt; IN_T, OUT_T &gt; Member List</div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p>This is the complete list of members for <a class="el" href="class_weighted_update_filter.html">WeightedUpdateFilter&lt; IN_T, OUT_T, INTERNAL_T &gt;</a>, including all inherited members.</p>
+<p>This is the complete list of members for <a class="el" href="class_lambda_filter.html">LambdaFilter&lt; IN_T, OUT_T &gt;</a>, including all inherited members.</p>
 <table class="directory">
   <tr class="even"><td class="entry"><a class="el" href="class_base_filter.html#ae26fe003083dca9719cef064c48b69a1">copy_to_client</a>(void *const output) final</td><td class="entry"><a class="el" href="class_base_filter.html">BaseFilter&lt; IN_T, OUT_T &gt;</a></td><td class="entry"><span class="mlabel">inline</span><span class="mlabel">protected</span><span class="mlabel">virtual</span></td></tr>
   <tr><td class="entry"><a class="el" href="class_base_filter.html#a4850de72bd4d2d309bc1f0f0f213f7cc">get_output_val_ptr</a>() final</td><td class="entry"><a class="el" href="class_base_filter.html">BaseFilter&lt; IN_T, OUT_T &gt;</a></td><td class="entry"><span class="mlabel">inline</span><span class="mlabel">protected</span><span class="mlabel">virtual</span></td></tr>
-  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>innertia</b> (defined in <a class="el" href="class_weighted_update_filter.html">WeightedUpdateFilter&lt; IN_T, OUT_T, INTERNAL_T &gt;</a>)</td><td class="entry"><a class="el" href="class_weighted_update_filter.html">WeightedUpdateFilter&lt; IN_T, OUT_T, INTERNAL_T &gt;</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
-  <tr><td class="entry"><a class="el" href="class_weighted_update_filter.html#ac945e29e3cd4f7cf6915ce51278374a8">internal_result</a></td><td class="entry"><a class="el" href="class_weighted_update_filter.html">WeightedUpdateFilter&lt; IN_T, OUT_T, INTERNAL_T &gt;</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
+  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>lambda</b> (defined in <a class="el" href="class_lambda_filter.html">LambdaFilter&lt; IN_T, OUT_T &gt;</a>)</td><td class="entry"><a class="el" href="class_lambda_filter.html">LambdaFilter&lt; IN_T, OUT_T &gt;</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
+  <tr><td class="entry"><a class="el" href="class_lambda_filter.html#a641ff96c5f1ea136c32515a4f5984390">LambdaFilter</a>(bool(*f)(IN_T const &amp;, OUT_T &amp;))</td><td class="entry"><a class="el" href="class_lambda_filter.html">LambdaFilter&lt; IN_T, OUT_T &gt;</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="class_base_filter.html#a7a305751ab9b7d627e0ff5972732f162">out_val</a></td><td class="entry"><a class="el" href="class_base_filter.html">BaseFilter&lt; IN_T, OUT_T &gt;</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
   <tr><td class="entry"><a class="el" href="class_base_filter.html#a808d50c12faa19e67ba7c9d64385e55c">push</a>(IN_T const &amp;input, OUT_T &amp;output)</td><td class="entry"><a class="el" href="class_base_filter.html">BaseFilter&lt; IN_T, OUT_T &gt;</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="class_filter.html#a6b29df863ca0d3d03f3d543ea4a55125">Filter::push</a>(void const *const input, void *const output)</td><td class="entry"><a class="el" href="class_filter.html">Filter</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
-  <tr bgcolor="#f0f0f0"><td class="entry"><b>seen_first</b> (defined in <a class="el" href="class_weighted_update_filter.html">WeightedUpdateFilter&lt; IN_T, OUT_T, INTERNAL_T &gt;</a>)</td><td class="entry"><a class="el" href="class_weighted_update_filter.html">WeightedUpdateFilter&lt; IN_T, OUT_T, INTERNAL_T &gt;</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
-  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>sensitivity</b> (defined in <a class="el" href="class_weighted_update_filter.html">WeightedUpdateFilter&lt; IN_T, OUT_T, INTERNAL_T &gt;</a>)</td><td class="entry"><a class="el" href="class_weighted_update_filter.html">WeightedUpdateFilter&lt; IN_T, OUT_T, INTERNAL_T &gt;</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
-  <tr><td class="entry"><a class="el" href="class_weighted_update_filter.html#a24d9de1f64eddc9464ce510198c765cc">update</a>(void const *const input) override</td><td class="entry"><a class="el" href="class_weighted_update_filter.html">WeightedUpdateFilter&lt; IN_T, OUT_T, INTERNAL_T &gt;</a></td><td class="entry"><span class="mlabel">inline</span><span class="mlabel">virtual</span></td></tr>
-  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>WeightedUpdateFilter</b>(double w) (defined in <a class="el" href="class_weighted_update_filter.html">WeightedUpdateFilter&lt; IN_T, OUT_T, INTERNAL_T &gt;</a>)</td><td class="entry"><a class="el" href="class_weighted_update_filter.html">WeightedUpdateFilter&lt; IN_T, OUT_T, INTERNAL_T &gt;</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr><td class="entry"><a class="el" href="class_lambda_filter.html#a4134a17e990c1176ea2e12a2cb201eca">update</a>(void const *const input) override</td><td class="entry"><a class="el" href="class_lambda_filter.html">LambdaFilter&lt; IN_T, OUT_T &gt;</a></td><td class="entry"><span class="mlabel">inline</span><span class="mlabel">protected</span><span class="mlabel">virtual</span></td></tr>
 </table></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

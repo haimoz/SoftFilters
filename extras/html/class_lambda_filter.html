@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.13"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>SoftFilters: WeightedUpdateFilter&lt; IN_T, OUT_T, INTERNAL_T &gt; Class Template Reference</title>
+<title>SoftFilters: LambdaFilter&lt; IN_T, OUT_T &gt; Class Template Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -70,7 +70,7 @@ $(function() {
   </div>
 </div>
 <script type="text/javascript">
-$(document).ready(function(){initNavTree('class_weighted_update_filter.html','');});
+$(document).ready(function(){initNavTree('class_lambda_filter.html','');});
 </script>
 <div id="doc-content">
 <!-- window showing the filter options -->
@@ -90,45 +90,42 @@ $(document).ready(function(){initNavTree('class_weighted_update_filter.html','')
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="#pro-attribs">Protected Attributes</a> &#124;
+<a href="#pro-methods">Protected Member Functions</a> &#124;
 <a href="#pri-attribs">Private Attributes</a> &#124;
-<a href="class_weighted_update_filter-members.html">List of all members</a>  </div>
+<a href="class_lambda_filter-members.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">WeightedUpdateFilter&lt; IN_T, OUT_T, INTERNAL_T &gt; Class Template Reference</div>  </div>
+<div class="title">LambdaFilter&lt; IN_T, OUT_T &gt; Class Template Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p>A filter that updates the output based on a weighted average between its previous output and the current input.  
- <a href="class_weighted_update_filter.html#details">More...</a></p>
+<p>A lambda filter that uses a client-supplied filter function.  
+ <a href="class_lambda_filter.html#details">More...</a></p>
 
-<p><code>#include &lt;<a class="el" href="_soft_filters_8h_source.html">SoftFilters.h</a>&gt;</code></p>
+<p><code>#include &lt;<a class="el" href="framework_8h_source.html">framework.h</a>&gt;</code></p>
 <div class="dynheader">
-Inheritance diagram for WeightedUpdateFilter&lt; IN_T, OUT_T, INTERNAL_T &gt;:</div>
+Inheritance diagram for LambdaFilter&lt; IN_T, OUT_T &gt;:</div>
 <div class="dyncontent">
-<div class="center"><img src="class_weighted_update_filter__inherit__graph.png" border="0" usemap="#_weighted_update_filter_3_01_i_n___t_00_01_o_u_t___t_00_01_i_n_t_e_r_n_a_l___t_01_4_inherit__map" alt="Inheritance graph"/></div>
-<map name="_weighted_update_filter_3_01_i_n___t_00_01_o_u_t___t_00_01_i_n_t_e_r_n_a_l___t_01_4_inherit__map" id="_weighted_update_filter_3_01_i_n___t_00_01_o_u_t___t_00_01_i_n_t_e_r_n_a_l___t_01_4_inherit__map">
-<area shape="rect" id="node2" href="class_base_filter.html" title="The typed filter base class. " alt="" coords="20,80,215,107"/>
-<area shape="rect" id="node3" href="class_filter.html" title="The Filter interface without type checking at compile time. " alt="" coords="91,5,144,32"/>
+<div class="center"><img src="class_lambda_filter__inherit__graph.png" border="0" usemap="#_lambda_filter_3_01_i_n___t_00_01_o_u_t___t_01_4_inherit__map" alt="Inheritance graph"/></div>
+<map name="_lambda_filter_3_01_i_n___t_00_01_o_u_t___t_01_4_inherit__map" id="_lambda_filter_3_01_i_n___t_00_01_o_u_t___t_01_4_inherit__map">
+<area shape="rect" id="node2" href="class_base_filter.html" title="The typed filter base class. " alt="" coords="5,80,200,107"/>
+<area shape="rect" id="node3" href="class_filter.html" title="The Filter interface without type checking at compile time. " alt="" coords="76,5,129,32"/>
 </map>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <div class="dynheader">
-Collaboration diagram for WeightedUpdateFilter&lt; IN_T, OUT_T, INTERNAL_T &gt;:</div>
+Collaboration diagram for LambdaFilter&lt; IN_T, OUT_T &gt;:</div>
 <div class="dyncontent">
-<div class="center"><img src="class_weighted_update_filter__coll__graph.png" border="0" usemap="#_weighted_update_filter_3_01_i_n___t_00_01_o_u_t___t_00_01_i_n_t_e_r_n_a_l___t_01_4_coll__map" alt="Collaboration graph"/></div>
-<map name="_weighted_update_filter_3_01_i_n___t_00_01_o_u_t___t_00_01_i_n_t_e_r_n_a_l___t_01_4_coll__map" id="_weighted_update_filter_3_01_i_n___t_00_01_o_u_t___t_00_01_i_n_t_e_r_n_a_l___t_01_4_coll__map">
-<area shape="rect" id="node2" href="class_base_filter.html" title="The typed filter base class. " alt="" coords="20,95,215,121"/>
-<area shape="rect" id="node3" href="class_filter.html" title="The Filter interface without type checking at compile time. " alt="" coords="48,5,101,32"/>
+<div class="center"><img src="class_lambda_filter__coll__graph.png" border="0" usemap="#_lambda_filter_3_01_i_n___t_00_01_o_u_t___t_01_4_coll__map" alt="Collaboration graph"/></div>
+<map name="_lambda_filter_3_01_i_n___t_00_01_o_u_t___t_01_4_coll__map" id="_lambda_filter_3_01_i_n___t_00_01_o_u_t___t_01_4_coll__map">
+<area shape="rect" id="node2" href="class_base_filter.html" title="The typed filter base class. " alt="" coords="5,95,200,121"/>
+<area shape="rect" id="node3" href="class_filter.html" title="The Filter interface without type checking at compile time. " alt="" coords="33,5,87,32"/>
 </map>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a0d7e10e8237038cc052db5b7c627293f"><td class="memItemLeft" align="right" valign="top"><a id="a0d7e10e8237038cc052db5b7c627293f"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>WeightedUpdateFilter</b> (double w)</td></tr>
-<tr class="separator:a0d7e10e8237038cc052db5b7c627293f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a24d9de1f64eddc9464ce510198c765cc"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_weighted_update_filter.html#a24d9de1f64eddc9464ce510198c765cc">update</a> (void const *const input) override</td></tr>
-<tr class="memdesc:a24d9de1f64eddc9464ce510198c765cc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Internally update the filter output based on the given input.  <a href="#a24d9de1f64eddc9464ce510198c765cc">More...</a><br /></td></tr>
-<tr class="separator:a24d9de1f64eddc9464ce510198c765cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a641ff96c5f1ea136c32515a4f5984390"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_lambda_filter.html#a641ff96c5f1ea136c32515a4f5984390">LambdaFilter</a> (bool(*f)(IN_T const &amp;, OUT_T &amp;))</td></tr>
+<tr class="memdesc:a641ff96c5f1ea136c32515a4f5984390"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a lambda filter using the given function.  <a href="#a641ff96c5f1ea136c32515a4f5984390">More...</a><br /></td></tr>
+<tr class="separator:a641ff96c5f1ea136c32515a4f5984390"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_class_base_filter"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_class_base_filter')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="class_base_filter.html">BaseFilter&lt; IN_T, OUT_T &gt;</a></td></tr>
 <tr class="memitem:a808d50c12faa19e67ba7c9d64385e55c inherit pub_methods_class_base_filter"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_base_filter.html#a808d50c12faa19e67ba7c9d64385e55c">push</a> (IN_T const &amp;input, OUT_T &amp;output)</td></tr>
 <tr class="memdesc:a808d50c12faa19e67ba7c9d64385e55c inherit pub_methods_class_base_filter"><td class="mdescLeft">&#160;</td><td class="mdescRight">Push a new data through the filter.  <a href="class_base_filter.html#a808d50c12faa19e67ba7c9d64385e55c">More...</a><br /></td></tr>
@@ -138,32 +135,12 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:a6b29df863ca0d3d03f3d543ea4a55125 inherit pub_methods_class_filter"><td class="mdescLeft">&#160;</td><td class="mdescRight">Push a new data through the filter.  <a href="class_filter.html#a6b29df863ca0d3d03f3d543ea4a55125">More...</a><br /></td></tr>
 <tr class="separator:a6b29df863ca0d3d03f3d543ea4a55125 inherit pub_methods_class_filter"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
-Protected Attributes</h2></td></tr>
-<tr class="memitem:ac945e29e3cd4f7cf6915ce51278374a8"><td class="memItemLeft" align="right" valign="top"><a id="ac945e29e3cd4f7cf6915ce51278374a8"></a>
-INTERNAL_T&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_weighted_update_filter.html#ac945e29e3cd4f7cf6915ce51278374a8">internal_result</a></td></tr>
-<tr class="memdesc:ac945e29e3cd4f7cf6915ce51278374a8"><td class="mdescLeft">&#160;</td><td class="mdescRight">representing the result in internal type in case the output type does not have the required precision <br /></td></tr>
-<tr class="separator:ac945e29e3cd4f7cf6915ce51278374a8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="inherit_header pro_attribs_class_base_filter"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_class_base_filter')"><img src="closed.png" alt="-"/>&#160;Protected Attributes inherited from <a class="el" href="class_base_filter.html">BaseFilter&lt; IN_T, OUT_T &gt;</a></td></tr>
-<tr class="memitem:a7a305751ab9b7d627e0ff5972732f162 inherit pro_attribs_class_base_filter"><td class="memItemLeft" align="right" valign="top"><a id="a7a305751ab9b7d627e0ff5972732f162"></a>
-OUT_T&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_base_filter.html#a7a305751ab9b7d627e0ff5972732f162">out_val</a></td></tr>
-<tr class="memdesc:a7a305751ab9b7d627e0ff5972732f162 inherit pro_attribs_class_base_filter"><td class="mdescLeft">&#160;</td><td class="mdescRight">Internally managed storage of the output value. <br /></td></tr>
-<tr class="separator:a7a305751ab9b7d627e0ff5972732f162 inherit pro_attribs_class_base_filter"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
-Private Attributes</h2></td></tr>
-<tr class="memitem:a7a53d9b8840791369790a4fcccdac9b7"><td class="memItemLeft" align="right" valign="top"><a id="a7a53d9b8840791369790a4fcccdac9b7"></a>
-INTERNAL_T&#160;</td><td class="memItemRight" valign="bottom"><b>sensitivity</b></td></tr>
-<tr class="separator:a7a53d9b8840791369790a4fcccdac9b7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a185451a047d4a091a40b7f3b95539583"><td class="memItemLeft" align="right" valign="top"><a id="a185451a047d4a091a40b7f3b95539583"></a>
-INTERNAL_T&#160;</td><td class="memItemRight" valign="bottom"><b>innertia</b></td></tr>
-<tr class="separator:a185451a047d4a091a40b7f3b95539583"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa978cc925fa8e7473942d17d01379aaf"><td class="memItemLeft" align="right" valign="top"><a id="aa978cc925fa8e7473942d17d01379aaf"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>seen_first</b></td></tr>
-<tr class="separator:aa978cc925fa8e7473942d17d01379aaf"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
-Additional Inherited Members</h2></td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
+Protected Member Functions</h2></td></tr>
+<tr class="memitem:a4134a17e990c1176ea2e12a2cb201eca"><td class="memItemLeft" align="right" valign="top"><a id="a4134a17e990c1176ea2e12a2cb201eca"></a>
+virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_lambda_filter.html#a4134a17e990c1176ea2e12a2cb201eca">update</a> (void const *const input) override</td></tr>
+<tr class="memdesc:a4134a17e990c1176ea2e12a2cb201eca"><td class="mdescLeft">&#160;</td><td class="mdescRight">In a lambda filter, the update function simply calls the client-supplied filter function. <br /></td></tr>
+<tr class="separator:a4134a17e990c1176ea2e12a2cb201eca"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pro_methods_class_base_filter"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_class_base_filter')"><img src="closed.png" alt="-"/>&#160;Protected Member Functions inherited from <a class="el" href="class_base_filter.html">BaseFilter&lt; IN_T, OUT_T &gt;</a></td></tr>
 <tr class="memitem:a4850de72bd4d2d309bc1f0f0f213f7cc inherit pro_methods_class_base_filter"><td class="memItemLeft" align="right" valign="top">virtual void const  *const&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_base_filter.html#a4850de72bd4d2d309bc1f0f0f213f7cc">get_output_val_ptr</a> () final</td></tr>
 <tr class="memdesc:a4850de72bd4d2d309bc1f0f0f213f7cc inherit pro_methods_class_base_filter"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read-only access to the internal output memory.  <a href="class_base_filter.html#a4850de72bd4d2d309bc1f0f0f213f7cc">More...</a><br /></td></tr>
@@ -172,58 +149,79 @@ Additional Inherited Members</h2></td></tr>
 virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_base_filter.html#ae26fe003083dca9719cef064c48b69a1">copy_to_client</a> (void *const output) final</td></tr>
 <tr class="memdesc:ae26fe003083dca9719cef064c48b69a1 inherit pro_methods_class_base_filter"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copy the output to client memory. <br /></td></tr>
 <tr class="separator:ae26fe003083dca9719cef064c48b69a1 inherit pro_methods_class_base_filter"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:a6833d78c160d429d7327a6b8b96919f6"><td class="memItemLeft" align="right" valign="top"><a id="a6833d78c160d429d7327a6b8b96919f6"></a>
+bool(*&#160;</td><td class="memItemRight" valign="bottom"><b>lambda</b> )(IN_T const &amp;, OUT_T &amp;)</td></tr>
+<tr class="separator:a6833d78c160d429d7327a6b8b96919f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
+Additional Inherited Members</h2></td></tr>
+<tr class="inherit_header pro_attribs_class_base_filter"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_class_base_filter')"><img src="closed.png" alt="-"/>&#160;Protected Attributes inherited from <a class="el" href="class_base_filter.html">BaseFilter&lt; IN_T, OUT_T &gt;</a></td></tr>
+<tr class="memitem:a7a305751ab9b7d627e0ff5972732f162 inherit pro_attribs_class_base_filter"><td class="memItemLeft" align="right" valign="top"><a id="a7a305751ab9b7d627e0ff5972732f162"></a>
+OUT_T&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_base_filter.html#a7a305751ab9b7d627e0ff5972732f162">out_val</a></td></tr>
+<tr class="memdesc:a7a305751ab9b7d627e0ff5972732f162 inherit pro_attribs_class_base_filter"><td class="mdescLeft">&#160;</td><td class="mdescRight">Internally managed storage of the output value. <br /></td></tr>
+<tr class="separator:a7a305751ab9b7d627e0ff5972732f162 inherit pro_attribs_class_base_filter"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><h3>template&lt;typename IN_T, typename OUT_T, typename INTERNAL_T = double&gt;<br />
-class WeightedUpdateFilter&lt; IN_T, OUT_T, INTERNAL_T &gt;</h3>
+<div class="textblock"><h3>template&lt;typename IN_T, typename OUT_T&gt;<br />
+class LambdaFilter&lt; IN_T, OUT_T &gt;</h3>
 
-<p>A filter that updates the output based on a weighted average between its previous output and the current input. </p>
-<p>Mathematically, let \(w\) be the sensitivity (weight of the input), \(1-w\) be the innertia (weight of the previous output), \(u_i\) be the \(i\)-th input, and \(v_i\) be the \(i\)-th output. Then </p><p class="formulaDsp">
-\begin{aligned} v_0 &amp;= u_0 \\ v_i &amp;= w \, u_i + (1 - w) \, v_{i-1} \;\;\;\;\text{for}\; i&gt;0, w\in[0,1] \end{aligned}
-</p>
- </div><h2 class="groupheader">Member Function Documentation</h2>
-<a id="a24d9de1f64eddc9464ce510198c765cc"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a24d9de1f64eddc9464ce510198c765cc">&#9670;&nbsp;</a></span>update()</h2>
+<p>A lambda filter that uses a client-supplied filter function. </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">IN_T</td><td>type of input data </td></tr>
+    <tr><td class="paramname">OUT_T</td><td>type of output data </td></tr>
+  </table>
+  </dd>
+</dl>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="a641ff96c5f1ea136c32515a4f5984390"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a641ff96c5f1ea136c32515a4f5984390">&#9670;&nbsp;</a></span>LambdaFilter()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename IN_T , typename OUT_T , typename INTERNAL_T  = double&gt; </div>
+template&lt;typename IN_T , typename OUT_T &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual bool <a class="el" href="class_weighted_update_filter.html">WeightedUpdateFilter</a>&lt; IN_T, OUT_T, INTERNAL_T &gt;::update </td>
+          <td class="memname"><a class="el" href="class_lambda_filter.html">LambdaFilter</a>&lt; IN_T, OUT_T &gt;::<a class="el" href="class_lambda_filter.html">LambdaFilter</a> </td>
           <td>(</td>
-          <td class="paramtype">void const *const&#160;</td>
-          <td class="paramname"><em>input</em></td><td>)</td>
+          <td class="paramtype">bool(*)(IN_T const &amp;, OUT_T &amp;)&#160;</td>
+          <td class="paramname"><em>f</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
-<p>Internally update the filter output based on the given input. </p>
-<p>This method behaves similarly to the public <a class="el" href="class_filter.html#a6b29df863ca0d3d03f3d543ea4a55125" title="Push a new data through the filter. ">Filter::push</a> method, but without copying the output to the client memory. This method is for internal workings of the filter framework. </p>
-
-<p>Implements <a class="el" href="class_filter.html#a3154fe3b3a25125953b824cd150e291c">Filter</a>.</p>
+<p>Create a lambda filter using the given function. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">f</td><td>A function with the same signature as the <a class="el" href="class_base_filter.html#a808d50c12faa19e67ba7c9d64385e55c" title="Push a new data through the filter. ">BaseFilter::push</a> function. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>src/<a class="el" href="_soft_filters_8h_source.html">SoftFilters.h</a></li>
+<li>src/<a class="el" href="framework_8h_source.html">framework.h</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="class_weighted_update_filter.html">WeightedUpdateFilter</a></li>
+    <li class="navelem"><a class="el" href="class_lambda_filter.html">LambdaFilter</a></li>
     <li class="footer">Generated by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.13 </li>
