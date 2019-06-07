@@ -144,36 +144,6 @@ protected:
 };
 
 /**
- * A lambda filter that uses a client-supplied filter function.
- *
- * @tparam IN_T type of input data
- * @tparam OUT_T type of output data
- */
-template <typename IN_T, typename OUT_T>
-class LambdaFilter : public BaseFilter<IN_T, OUT_T>
-{
-public:
-	/**
-	 * Create a lambda filter using the given function.
-	 *
-	 * @param f
-	 * A function with the same signature as the BaseFilter::push function.
-	 */
-	LambdaFilter(bool (*f)(IN_T const &, OUT_T &)): lambda(f) { }
-protected:
-	/**
-	 * In a lambda filter,
-	 * the update function simply calls the client-supplied filter function.
-	 */
-	virtual bool update(void const * const input) override
-	{
-		return lambda(*(IN_T const * const) input, this->out_val);
-	}
-private:
-	bool (*lambda)(IN_T const &, OUT_T &);
-};
-
-/**
  * A chain of filters.
  */
 class FilterChain : public LinkedList<Filter *>, public Filter
