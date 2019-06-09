@@ -8,7 +8,7 @@ Can be used as a generic filter framework in C++.
 
 1. __Include the library__
 
-   ```Arduino
+   ```C++
    #include <SoftFilters.h>
    ```
 
@@ -19,7 +19,7 @@ Can be used as a generic filter framework in C++.
    which provides more flexibility to your sketch.
    This is a C++ feature called "[templates][]"
    which is also supported in Arduino.
-   ```Arduino
+   ```C++
    MovingAverageFilter<double> movAvg(20);  // a 20-sample moving average filter
    ```
 
@@ -31,14 +31,14 @@ Can be used as a generic filter framework in C++.
    And don't forget to declare an output variable to hold the output data.
    You can declare the input & output variables in the global scope
    of your Arduino sketch:
-   ```Arduino
+   ```C++
    double input_val, output_val;
    ```
 
    Call the filter's `push` method, and
    pass the input and output data by pointer.
    The `push` method will return true if there is valid output value.
-   ```Arduino
+   ```C++
    void loop()
    {
      ...  // suppose you have read data to the input_val variable
@@ -57,7 +57,7 @@ Can be used as a generic filter framework in C++.
    `Differential` is a three-value tuple of position, speed, and acceleration.
    Using these types, you can create a `DifferentialFilter` to calculate
    the speed and acceleration.
-   ```Arduino
+   ```C++
    DifferentialFilter<double, usigned long> diff;
 
    // need to specify the value and timestamp data type
@@ -90,7 +90,7 @@ Can be used as a generic filter framework in C++.
    Create a `FilterChain` to connect multiple filters.
    Then you can use it as a single filter.
    When appending the sub-filters, you need to pass by pointer.
-   ```Arduino
+   ```C++
    double input;
    FilterChain filters;
    MovingAverageFilter<double movAvg(20);
@@ -120,35 +120,36 @@ Can be used as a generic filter framework in C++.
    ```
 
 
+
 ## Currently implemented filters
 
-- __`DifferentialFilter`__
+- `DifferentialFilter`
 
   Calculates the speed and acceleration.
 
-- __`TimestampFilter`__
+- `TimestampFilter`
 
   Adds timestamp to input data, outputting the `Reading` data type.
 
-- __`MovingAverageFilter`__
+- `MovingAverageFilter`
 
   Calculates the average of samples in a moving window.
 
-- __`MovingVarianceFilter`__
+- `MovingVarianceFilter`
 
   Calculates the variance of samples in a moving window.
 
-- __`WeightedUpdateFilter`__
+- `WeightedUpdateFilter`
 
   Updates the output value based on a weighted average between the previous
   output and the current input.
 
-- __`AdaptiveNormalizationFilter`__
+- `AdaptiveNormalizationFilter`
 
   Outputs a value between 0 and 1 which is the current input normalized
   against the range of all input (including the current input).
 
-- __`OneEuroFilter`__
+- `OneEuroFilter`
 
   An adaptive low-pass filter based on the following paper:
 
@@ -161,11 +162,11 @@ Can be used as a generic filter framework in C++.
   _Proceedings of the SIGCHI Conference on Human Factors in Computing Systems_
   (CHI '12), 2527–2530. https://doi.org/10.1145/2207676.2208639
 
-- __`LambdaFilter`__
+- `LambdaFilter`
 
   A filter that uses a user-supplied filter function.
 
-- __`FlowRateFilter`__
+- `FlowRateFilter`
 
   A pass-through filter for measuring the data rate.
 
