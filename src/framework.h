@@ -112,23 +112,37 @@ template <typename IN_T, typename OUT_T>
 class BaseFilter : public Filter
 {
 public:
-	/**
-	 * Push a new data through the filter.
-	 * This function is essentially a proxy call to the Filter::push function
-	 * that does away the pointer parameter, which is supposed to be
-	 * beginner-friendly.
-	 *
-	 * @param[in] input A read-only reference to the input data.
-	 * @param[out] output The reference to the output data to be written to.
-	 *
-	 * @returns True if there is output data; false otherwise.
-	 * @note The output variable is not guaranteed to remain the same even if
-	 * the return value is false.
-	 */
-	bool push(IN_T const &input, OUT_T &output)
-	{
-		return Filter::push(&input, &output);
-	}
+
+//// OBSOLETE NOTE ////////////////////////////////////////////////////////////
+//// The typed `push` method was originally designed to be beginner-friendly
+//// by passing by references to avoid the need to familiarize with pointers.
+//// Due to requirement of some filter classes (composite filters such as
+//// FilterChain, FilterTree, and PassThroughFilter), the input and output
+//// need to be passed by pointers.  To provide a unified use case, I have
+//// decided to remove the typed `push` method.
+////
+//// Haimo Zhang, 9 Jun 2019
+////
+//
+//	/**
+//	 * Push a new data through the filter.
+//	 * This function is essentially a proxy call to the Filter::push function
+//	 * that does away the pointer parameter, which is supposed to be
+//	 * beginner-friendly.
+//	 *
+//	 * @param[in] input A read-only reference to the input data.
+//	 * @param[out] output The reference to the output data to be written to.
+//	 *
+//	 * @returns True if there is output data; false otherwise.
+//	 * @note The output variable is not guaranteed to remain the same even if
+//	 * the return value is false.
+//	 */
+//	bool push(IN_T const &input, OUT_T &output)
+//	{
+//		return Filter::push(&input, &output);
+//	}
+///////////////////////////////////////////////////////////////////////////////
+
 protected:
 	virtual void const * const get_output_val_ptr() final { return &out_val; }
 	virtual void copy_to_client(void * const output) final

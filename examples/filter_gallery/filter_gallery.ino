@@ -51,34 +51,34 @@ void loop()
   input = amplitude * sin(omega * tick++);
   Serial.print(input, 3);
   Serial.print(' ');
-  if (movAvg.push(input, avg)) {
+  if (movAvg.push(&input, &avg)) {
     Serial.print(avg, 3);
     Serial.print(' ');
   }
-  if (movVar.push(input, var)) {
+  if (movVar.push(&input, &var)) {
     Serial.print(var, 3);
     Serial.print(' ');
   }
-  tsFilter.push(input, reading);
-  if (diffFilter.push(reading, diff)) {
+  tsFilter.push(&input, &reading);
+  if (diffFilter.push(&reading, &diff)) {
     Serial.print(diff.value.speed * 1e6, 3);  // 1e6 will bring the unit from per usec to per second
     Serial.print(' ');
     Serial.print(diff.value.acceleration * 1e12, 3);  // 1e12 will bring the unit from per usec^2 to to per second^2
     Serial.print(' ');
   }
-  if (wtUpd.push(input, weighted_val)) {
+  if (wtUpd.push(&input, &weighted_val)) {
     Serial.print(weighted_val, 3);
     Serial.print(' ');
   }
-  if (adpNorm.push(input, normalized_val)) {
+  if (adpNorm.push(&input, &normalized_val)) {
     Serial.print(normalized_val, 3);
     Serial.print(' ');
   }
-  if (oneEuro.push(reading, one_euro_reading)) {
+  if (oneEuro.push(&reading, &one_euro_reading)) {
     Serial.print(one_euro_reading.value, 3);
     Serial.print(' ');
   }
-  if (lambda.push(input, lambda_val)) {
+  if (lambda.push(&input, &lambda_val)) {
     Serial.print(lambda_val, 3);
     Serial.print(' ');
   }
