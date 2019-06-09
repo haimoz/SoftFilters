@@ -1,0 +1,29 @@
+# Syntax coloring for SoftFilters
+
+# datatypes (KEYWORD1 | DATA_TYPE)
+Filter	KEYWORD1		DATA_TYPE
+BaseFilter	KEYWORD1		DATA_TYPE
+PassThroughFilter	KEYWORD1		DATA_TYPE
+FilterChain	KEYWORD1		DATA_TYPE
+FilterTree	KEYWORD1		DATA_TYPE
+LinkedListNode	KEYWORD1		DATA_TYPE
+NodeIterator	KEYWORD1		DATA_TYPE
+LinkedList	KEYWORD1		DATA_TYPE
+DifferentialFilter	KEYWORD1		DATA_TYPE
+TimestampFilter	KEYWORD1		DATA_TYPE
+CachedFilter	KEYWORD1		DATA_TYPE
+MovingAverageFilter	KEYWORD1		DATA_TYPE
+MovingVarianceFilter	KEYWORD1		DATA_TYPE
+WeightedUpdateFilter	KEYWORD1		DATA_TYPE
+AdaptiveNormalizationFilter	KEYWORD1		DATA_TYPE
+OneEuroFilter	KEYWORD1		DATA_TYPE
+LambdaFilter	KEYWORD1		DATA_TYPE
+FlowRateFilter	KEYWORD1		DATA_TYPE
+
+# functions (KEYWORD2 | )
+
+# structures (KEYWORD3 | RESERVED_WORD)
+Reading	KEYWORD3		RESERVED_WORD
+Differential	KEYWORD3		RESERVED_WORD
+
+# constants (LITERAL1 | RESERVED_WORD)
