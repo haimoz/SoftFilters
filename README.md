@@ -174,7 +174,7 @@ Can be used as a generic filter framework in C++.
 
 ## Documentations
 
-For more details, see documentations or the source code.
+For more details, see [documentations](https://haimoz.github.io/SoftFilters/) or the source code.
 
 
 
