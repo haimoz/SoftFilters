@@ -144,6 +144,33 @@ protected:
 };
 
 /**
+ * A pass-through filter does nothing and is useful for derived classes
+ * to perform monitoring functionalities, such as the FlowRateFilter.
+ *
+ * @tparam T The type of the data that is passing through.
+ */
+template <typename T>
+class PassThroughFilter : public Filter
+{
+public:
+	PassThroughFilter() : ptr(NULL) { }
+protected:
+	virtual void const * const get_output_val_ptr() override { return ptr; }
+	virtual bool update(void const * const input) override
+	{
+		ptr = (T const * const) input;
+		return true;
+	}
+	virtual void copy_to_client(void * const output) override
+	{
+		if (output != NULL) {
+			*(T * const) output = *ptr;
+		}
+	}
+	T const *ptr;  ///< Pointer to the latest data that passed through.
+};
+
+/**
  * A chain of filters.
  */
 class FilterChain : public LinkedList<Filter *>, public Filter

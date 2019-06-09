@@ -423,4 +423,74 @@ private:
 	bool (*lambda)(IN_T const &, OUT_T &);
 };
 
+/**
+ * A flow rate filter measures the flow rate of incoming data.
+ *
+ * @tparam T The type of the data that is passing through.
+ * @tparam TS_T
+ *         The type of timestamp.
+ *         Defaults to `unsigned long` as per documentation of the Arduino
+ *         `millis` and `micros` functions.
+ * @tparam time_fun
+ *         A timestamp function that takes no input parameter
+ *         and returns a timestamp in the unit of number of ticks.
+ * @tparam TICKS_PER_SEC
+ *         Number of ticks (unit of the timestamp) per second.
+ */
+#ifdef ARDUINO
+template <typename T, typename TS_T=unsigned long, TS_T (*time_fun)()=micros, TS_T TICKS_PER_SEC=(int)1e6>
+#else
+template <typename T, typename TS_T, TS_T (*time_fun)(), TS_T TICKS_PER_SEC>
+#endif
+class FlowRateFilter : public PassThroughFilter<T>
+{
+public:
+	FlowRateFilter() : PassThroughFilter<T>(), total_count(0), first_ts(0), last_ts(0) { }
+	virtual bool update(void const * const input) override
+	{
+		PassThroughFilter<T>::update(input);
+		if (++total_count == 1) {
+			first_ts = last_ts = time_fun();
+		}
+		else {
+			last_ts = time_fun();
+		}
+		return true;
+	}
+	/**
+	 * Calculate the data rate in "frames per second".
+	 *
+	 * Essentially the "framerate" is calculated as the total number of data
+	 * devided by the total duration in seconds
+	 * since arrival of the first data.
+	 *
+	 * @returns The data per second in double precision.
+	 */
+	double get_flow_rate()
+	{
+		if (first_ts == last_ts) {
+			// return an invalid value since the flow rate cannot be calculated
+			return -1;
+		}
+		return total_count / get_duration_in_seconds();
+	}
+	/**
+	 * @returns The total number of data that have passed through this filter.
+	 */
+	unsigned long get_count() { return total_count; }
+	/**
+	 * @returns The total number of clock "ticks" (platform-dependent)
+	 * since arrival of the first data.
+	 */
+	TS_T get_duration_in_ticks() { return last_ts - first_ts; }
+	/**
+	 * @returns The total number of seconds since arrival of the first data.
+	 */
+	double get_duration_in_seconds() { return get_duration_in_ticks() / (double) TICKS_PER_SEC; }
+private:
+	unsigned long total_count;  ///< total data count
+	TS_T first_ts;  ///< timestamp of first data
+	TS_T last_ts;  ///< timestamp of latest data
+};
+
 #endif

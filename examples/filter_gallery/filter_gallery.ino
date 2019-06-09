@@ -38,6 +38,8 @@ bool add1(double const &in, double &out)
 LambdaFilter<double, double> lambda(add1);
 double lambda_val;
 
+FlowRateFilter<double> flow;
+
 void setup()
 {
   Serial.begin(38400);
@@ -78,6 +80,10 @@ void loop()
   }
   if (lambda.push(input, lambda_val)) {
     Serial.print(lambda_val, 3);
+    Serial.print(' ');
+  }
+  if (flow.push(&input, NULL)) {
+    Serial.print(flow.get_flow_rate(), 3);
   }
   Serial.println();
   delay(delta_t);
