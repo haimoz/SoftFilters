@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['timestampfilter',['TimestampFilter',['../class_timestamp_filter.html',1,'']]],
-  ['tree',['Tree',['../class_tree.html',1,'']]],
-  ['tree_3c_20filter_20_2a_3e',['Tree&lt; Filter *&gt;',['../class_tree.html',1,'']]]
+  ['reading',['Reading',['../class_reading.html',1,'']]],
+  ['reading_3c_20differential_3c_20val_5ft_20_3e_2c_20ts_5ft_20_3e',['Reading&lt; Differential&lt; VAL_T &gt;, TS_T &gt;',['../class_reading.html',1,'']]]
 ];

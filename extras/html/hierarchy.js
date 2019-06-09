@@ -24,7 +24,10 @@ var hierarchy =
       [ "BaseFilter< VAL_T, Reading< VAL_T, TS_T > >", "class_base_filter.html", [
         [ "TimestampFilter< VAL_T, TS_T, time_fn >", "class_timestamp_filter.html", null ]
       ] ],
-      [ "FilterChain", "class_filter_chain.html", null ]
+      [ "FilterChain", "class_filter_chain.html", null ],
+      [ "PassThroughFilter< T >", "class_pass_through_filter.html", [
+        [ "FlowRateFilter< T, TS_T, time_fun, TICKS_PER_SEC >", "class_flow_rate_filter.html", null ]
+      ] ]
     ] ],
     [ "LinkedList< VAL_T >", "class_linked_list.html", null ],
     [ "LinkedList< Filter *>", "class_linked_list.html", [

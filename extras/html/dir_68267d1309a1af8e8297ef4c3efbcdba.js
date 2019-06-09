@@ -3,7 +3,7 @@ var dir_68267d1309a1af8e8297ef4c3efbcdba =
     [ "framework.h", "framework_8h.html", [
       [ "Filter", "class_filter.html", "class_filter" ],
       [ "BaseFilter", "class_base_filter.html", "class_base_filter" ],
-      [ "LambdaFilter", "class_lambda_filter.html", "class_lambda_filter" ],
+      [ "PassThroughFilter", "class_pass_through_filter.html", "class_pass_through_filter" ],
       [ "FilterChain", "class_filter_chain.html", "class_filter_chain" ],
       [ "FilterTree", "class_filter_tree.html", null ]
     ] ],

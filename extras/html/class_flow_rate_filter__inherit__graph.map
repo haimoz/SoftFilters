@@ -1,0 +1,4 @@
+<map id="FlowRateFilter&lt; T, TS_T, time_fun, TICKS_PER_SEC &gt;" name="FlowRateFilter&lt; T, TS_T, time_fun, TICKS_PER_SEC &gt;">
+<area shape="rect" id="node2" href="$class_pass_through_filter.html" title="A pass&#45;through filter does nothing and is useful for derived classes to perform monitoring functional..." alt="" coords="5,80,176,107"/>
+<area shape="rect" id="node3" href="$class_filter.html" title="The Filter interface without type checking at compile time. " alt="" coords="64,5,117,32"/>
+</map>

@@ -1,0 +1,4 @@
+<map id="PassThroughFilter&lt; T &gt;" name="PassThroughFilter&lt; T &gt;">
+<area shape="rect" id="node3" href="$class_flow_rate_filter.html" title="A flow rate filter measures the flow rate of incoming data. " alt="" coords="18,155,163,181"/>
+<area shape="rect" id="node2" href="$class_filter.html" title="The Filter interface without type checking at compile time. " alt="" coords="64,5,117,32"/>
+</map>
