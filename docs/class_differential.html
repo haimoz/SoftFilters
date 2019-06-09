@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.13"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>SoftFilters: Reading&lt; VAL_T, TS_T &gt; Class Template Reference</title>
+<title>SoftFilters: Differential&lt; T &gt; Class Template Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -70,7 +70,7 @@ $(function() {
   </div>
 </div>
 <script type="text/javascript">
-$(document).ready(function(){initNavTree('class_reading.html','');});
+$(document).ready(function(){initNavTree('class_differential.html','');});
 </script>
 <div id="doc-content">
 <!-- window showing the filter options -->
@@ -91,46 +91,53 @@ $(document).ready(function(){initNavTree('class_reading.html','');});
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pub-attribs">Public Attributes</a> &#124;
-<a href="class_reading-members.html">List of all members</a>  </div>
+<a href="class_differential-members.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">Reading&lt; VAL_T, TS_T &gt; Class Template Reference</div>  </div>
+<div class="title">Differential&lt; T &gt; Class Template Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p>A class that contains a &lt;value, timestamp&gt; tuple.  
- <a href="class_reading.html#details">More...</a></p>
+<p>A class to represent the speed and acceleration of a value in addition to itself.  
+ <a href="class_differential.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="types_8h_source.html">types.h</a>&gt;</code></p>
 <div class="dynheader">
-Collaboration diagram for Reading&lt; VAL_T, TS_T &gt;:</div>
+Collaboration diagram for Differential&lt; T &gt;:</div>
 <div class="dyncontent">
-<div class="center"><img src="class_reading__coll__graph.png" border="0" usemap="#_reading_3_01_v_a_l___t_00_01_t_s___t_01_4_coll__map" alt="Collaboration graph"/></div>
+<div class="center"><img src="class_differential__coll__graph.png" border="0" usemap="#_differential_3_01_t_01_4_coll__map" alt="Collaboration graph"/></div>
+<map name="_differential_3_01_t_01_4_coll__map" id="_differential_3_01_t_01_4_coll__map">
+</map>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:aa11cdf64f9377e3d888bb07e6c865f45"><td class="memItemLeft" align="right" valign="top"><a id="aa11cdf64f9377e3d888bb07e6c865f45"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>Reading</b> (VAL_T v, TS_T ts)</td></tr>
-<tr class="separator:aa11cdf64f9377e3d888bb07e6c865f45"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab65f90ab98dba0525fabfe7093896764"><td class="memItemLeft" align="right" valign="top"><a id="ab65f90ab98dba0525fabfe7093896764"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>Differential</b> (T pos, T spd, T acc)</td></tr>
+<tr class="separator:ab65f90ab98dba0525fabfe7093896764"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a199cdc5840ebad6b5c86c32aac75cd41"><td class="memItemLeft" align="right" valign="top"><a id="a199cdc5840ebad6b5c86c32aac75cd41"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>Differential</b> (T val)</td></tr>
+<tr class="separator:a199cdc5840ebad6b5c86c32aac75cd41"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
-<tr class="memitem:ae1dcc16f4bd492be29643a5071cf7e91"><td class="memItemLeft" align="right" valign="top"><a id="ae1dcc16f4bd492be29643a5071cf7e91"></a>
-VAL_T&#160;</td><td class="memItemRight" valign="bottom"><b>value</b></td></tr>
-<tr class="separator:ae1dcc16f4bd492be29643a5071cf7e91"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afaa0976b6eabfa0888c8de5cf05a938f"><td class="memItemLeft" align="right" valign="top"><a id="afaa0976b6eabfa0888c8de5cf05a938f"></a>
-TS_T&#160;</td><td class="memItemRight" valign="bottom"><b>timestamp</b></td></tr>
-<tr class="separator:afaa0976b6eabfa0888c8de5cf05a938f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae076d63fa418570d6799511119a79411"><td class="memItemLeft" align="right" valign="top"><a id="ae076d63fa418570d6799511119a79411"></a>
+T&#160;</td><td class="memItemRight" valign="bottom"><b>position</b></td></tr>
+<tr class="separator:ae076d63fa418570d6799511119a79411"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0cdc21fb37d172fa93d08c93b6d5946e"><td class="memItemLeft" align="right" valign="top"><a id="a0cdc21fb37d172fa93d08c93b6d5946e"></a>
+T&#160;</td><td class="memItemRight" valign="bottom"><b>speed</b></td></tr>
+<tr class="separator:a0cdc21fb37d172fa93d08c93b6d5946e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a70c8b200a54aadb7915abc22846d0d11"><td class="memItemLeft" align="right" valign="top"><a id="a70c8b200a54aadb7915abc22846d0d11"></a>
+T&#160;</td><td class="memItemRight" valign="bottom"><b>acceleration</b></td></tr>
+<tr class="separator:a70c8b200a54aadb7915abc22846d0d11"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><h3>template&lt;typename VAL_T, typename TS_T = unsigned long&gt;<br />
-class Reading&lt; VAL_T, TS_T &gt;</h3>
+<div class="textblock"><h3>template&lt;typename T&gt;<br />
+class Differential&lt; T &gt;</h3>
 
-<p>A class that contains a &lt;value, timestamp&gt; tuple. </p>
+<p>A class to represent the speed and acceleration of a value in addition to itself. </p>
 <dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
-    <tr><td class="paramname">VAL_T</td><td>the value type </td></tr>
-    <tr><td class="paramname">TS_T</td><td>the timestamp type, defaults to <code>unsigned long</code> as per Arduino references for <code>millis</code> and <code>micros</code>. </td></tr>
+    <tr><td class="paramname">T</td><td>the type of the position, speed, and acceleration values </td></tr>
   </table>
   </dd>
 </dl>
@@ -142,7 +149,7 @@ class Reading&lt; VAL_T, TS_T &gt;</h3>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="class_reading.html">Reading</a></li>
+    <li class="navelem"><a class="el" href="class_differential.html">Differential</a></li>
     <li class="footer">Generated by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.13 </li>
