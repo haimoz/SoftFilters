@@ -11,8 +11,8 @@ Can be used as a generic filter framework in C++.
    Either install from Arduino library manager (available soon),
    or clone from Github repository to your Arduino library directory:
    ```bash
-   $> cd ~/Arduino/libraries/  # enter Arduino library directory
-   $> git clone https://github.com/haimoz/SoftFilters.git
+   $ cd ~/Arduino/libraries/  # enter Arduino library directory
+   $ git clone https://github.com/haimoz/SoftFilters.git
    ```
 
 1. __Include the library__
