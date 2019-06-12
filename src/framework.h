@@ -124,7 +124,7 @@ public:
 //// Haimo Zhang, 9 Jun 2019
 ////
 //
-//	/**
+//	/*
 //	 * Push a new data through the filter.
 //	 * This function is essentially a proxy call to the Filter::push function
 //	 * that does away the pointer parameter, which is supposed to be

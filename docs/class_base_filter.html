@@ -126,7 +126,7 @@ Collaboration diagram for BaseFilter&lt; IN_T, OUT_T &gt;:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
 <tr class="memitem:a4850de72bd4d2d309bc1f0f0f213f7cc"><td class="memItemLeft" align="right" valign="top">virtual void const  *const&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_base_filter.html#a4850de72bd4d2d309bc1f0f0f213f7cc">get_output_val_ptr</a> () final</td></tr>
-<tr class="memdesc:a4850de72bd4d2d309bc1f0f0f213f7cc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Push a new data through the filter.  <a href="#a4850de72bd4d2d309bc1f0f0f213f7cc">More...</a><br /></td></tr>
+<tr class="memdesc:a4850de72bd4d2d309bc1f0f0f213f7cc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read-only access to the internal output memory.  <a href="#a4850de72bd4d2d309bc1f0f0f213f7cc">More...</a><br /></td></tr>
 <tr class="separator:a4850de72bd4d2d309bc1f0f0f213f7cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae26fe003083dca9719cef064c48b69a1"><td class="memItemLeft" align="right" valign="top"><a id="ae26fe003083dca9719cef064c48b69a1"></a>
 virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_base_filter.html#ae26fe003083dca9719cef064c48b69a1">copy_to_client</a> (void *const output) final</td></tr>
@@ -190,17 +190,9 @@ template&lt;typename IN_T, typename OUT_T&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Push a new data through the filter. </p>
-<p>This function is essentially a proxy call to the <a class="el" href="class_filter.html#a6b29df863ca0d3d03f3d543ea4a55125" title="Push a new data through the filter. ">Filter::push</a> function that does away the pointer parameter, which is supposed to be beginner-friendly.</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">input</td><td>A read-only reference to the input data. </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">output</td><td>The reference to the output data to be written to.</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>True if there is output data; false otherwise. </dd></dl>
-<dl class="section note"><dt>Note</dt><dd>The output variable is not guaranteed to remain the same even if the return value is false. </dd></dl>
+<p>Read-only access to the internal output memory. </p>
+<p>This member function is mainly used by derived composite filters, which needs to point the output of the previous filter stage to the input of the next fitler stage. See for example the implementation of <a class="el" href="class_filter_chain.html" title="A chain of filters. ">FilterChain</a>.</p>
+<dl class="section return"><dt>Returns</dt><dd>A read-only pointer to the memory where the output value is stored internally by the filter. </dd></dl>
 
 <p>Implements <a class="el" href="class_filter.html#a55c247e74ae10fe686c6db48d6fe8cee">Filter</a>.</p>
 
