@@ -1,4 +1,4 @@
-# SoftFilters
+# ![SoftFilters logo](./SoftFilters_logo.svg "SoftFilters - Arduino framework and library of software data filters.") SoftFilters
 Arduino framework and library of software data filters.
 Can be used as a generic filter framework in C++.
 
@@ -8,8 +8,11 @@ Can be used as a generic filter framework in C++.
 
 0. __Installation__
 
-   Either install from Arduino library manager (available soon),
-   or clone from Github repository to your Arduino library directory:
+   The SoftFilters library can be conveniently installed
+   through the Arduino IDE's library manager.
+
+   Alternatively, you can manually clone from this Github repository
+   to your Arduino library directory:
    ```bash
    $ cd ~/Arduino/libraries/  # enter Arduino library directory
    $ git clone https://github.com/haimoz/SoftFilters.git
